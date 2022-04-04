@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoatInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoatInfo.Designer.cs">
+      <DependentUpon>BoatInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BoatInfo.resx">
+      <DependentUpon>BoatInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientInfo.resx">
       <DependentUpon>ClientInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +120,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

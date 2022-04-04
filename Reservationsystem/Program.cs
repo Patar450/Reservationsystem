@@ -16,7 +16,7 @@ namespace Reservationsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClientInfo());
+            Application.Run(new BoatInfo());
         }
     }
 }

@@ -11,8 +11,12 @@ using System.Data.SqlClient;
 
 namespace Reservationsystem
 {
+    
+
     public partial class BoatInfo : Form
     {
+        private string isfree = null;
+
         //Establishes a connection to the SQL Database.
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
 
@@ -51,8 +55,17 @@ namespace Reservationsystem
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            
+            if (RadioYes.Checked == true)
+            {
+                isfree = "Free";
+            }
+            else if (RadioNo.Checked == true)
+            {
+                isfree = "Busy";
+            }
             Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Boat_tbl values('" + txbxBoatID.Text + "','" + txbxBoatModel.Text + "','" + txbxBoatName.Text + "','" + comboYear.SelectedItem.ToString() + "','" + combobtft.SelectedItem.ToString() + "','" + combocabin.SelectedItem.ToString() + "','" + combowc.SelectedItem.ToString() + "','" +combopax.SelectedItem.ToString() + "','" +txbxboatrent.Text + "','" +Combobtfree.SelectedItem.ToString()+ "')", Con);
+            SqlCommand cmd = new SqlCommand("insert into Boat_tbl values('" + txbxBoatID.Text + "','" + txbxBoatModel.Text + "','" + txbxBoatName.Text + "','" + comboYear.SelectedItem.ToString() + "','" + combobtft.SelectedItem.ToString() + "','" + combocabin.SelectedItem.ToString() + "','" + combowc.SelectedItem.ToString() + "','" +combopax.SelectedItem.ToString() + "','" +txbxboatrent.Text + "','" + isfree + "')", Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Boat Successfully Added");
             Con.Close();
@@ -64,7 +77,7 @@ namespace Reservationsystem
         {
             //Edits text from the BoatId.
             Con.Open();
-            string myquery = "UPDATE Boat_tbl set BoatModel = '" + txbxBoatModel.Text + "', BoatName = '" + txbxBoatName.Text + "', BoatYear = '" + comboYear.Text + "', BoatFT =' " + combobtft.Text + "', BoatCabin ='" + combocabin.Text + "', BoatWC =' " + combowc.Text + "', BoatPAX =' " +combopax.Text + "', BoatRent =' " +txbxboatrent.Text + "', BoatFree =' " +Combobtfree.Text+ "' where Boat_Id = '" + txbxBoatID.Text + "';";
+            string myquery = "UPDATE Boat_tbl set BoatModel = '" + txbxBoatModel.Text + "', BoatName = '" + txbxBoatName.Text + "', BoatYear = '" + comboYear.Text + "', BoatFT =' " + combobtft.Text + "', BoatCabin ='" + combocabin.Text + "', BoatWC =' " + combowc.Text + "', BoatPAX =' " +combopax.Text + "', BoatRent =' " +txbxboatrent.Text + "', BoatFree =' " + isfree + "' where Boat_Id = '" + txbxBoatID.Text + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Boat Successfully Edited");
@@ -95,7 +108,18 @@ namespace Reservationsystem
             combowc.Text = Boat_GridView.SelectedRows[0].Cells[6].Value.ToString();
             combopax.Text = Boat_GridView.SelectedRows[0].Cells[7].Value.ToString();
             txbxboatrent.Text = Boat_GridView.SelectedRows[0].Cells[8].Value.ToString();
-            Combobtfree.Text = Boat_GridView.SelectedRows[0].Cells[9].Value.ToString();
+
+            if (Boat_GridView.SelectedRows[0].Cells[9].Value.ToString() == "Free")
+            {
+                RadioNo.Checked = false;
+                RadioYes.Checked = true;
+               
+            }
+            else if (Boat_GridView.SelectedRows[0].Cells[9].Value.ToString() == "Busy")
+            {
+                RadioNo.Checked = true;
+                RadioYes.Checked = false;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

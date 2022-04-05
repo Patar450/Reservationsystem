@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientInfo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lblClientInformation = new System.Windows.Forms.Label();
@@ -344,7 +343,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Reservationsystem.Properties.Resources.refresh;
             this.pictureBox1.Location = new System.Drawing.Point(727, 457);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 26);

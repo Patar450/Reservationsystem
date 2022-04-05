@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lblClientInformation = new System.Windows.Forms.Label();
             this.gpbxClientDetails = new System.Windows.Forms.GroupBox();
+            this.comboGender = new System.Windows.Forms.ComboBox();
             this.txbxStaffID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txbxStaffUser = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboGender = new System.Windows.Forms.ComboBox();
             this.Staff_GridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -113,6 +112,18 @@
             this.gpbxClientDetails.TabIndex = 22;
             this.gpbxClientDetails.TabStop = false;
             this.gpbxClientDetails.Text = "Staff Details";
+            // 
+            // comboGender
+            // 
+            this.comboGender.FormattingEnabled = true;
+            this.comboGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.comboGender.Location = new System.Drawing.Point(9, 139);
+            this.comboGender.Name = "comboGender";
+            this.comboGender.Size = new System.Drawing.Size(121, 21);
+            this.comboGender.Sorted = true;
+            this.comboGender.TabIndex = 21;
             // 
             // txbxStaffID
             // 
@@ -215,18 +226,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Staff Username";
             // 
-            // comboGender
-            // 
-            this.comboGender.FormattingEnabled = true;
-            this.comboGender.Items.AddRange(new object[] {
-            "Female",
-            "Male"});
-            this.comboGender.Location = new System.Drawing.Point(9, 139);
-            this.comboGender.Name = "comboGender";
-            this.comboGender.Size = new System.Drawing.Size(121, 21);
-            this.comboGender.Sorted = true;
-            this.comboGender.TabIndex = 21;
-            // 
             // Staff_GridView
             // 
             this.Staff_GridView.AllowUserToAddRows = false;
@@ -246,7 +245,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Reservationsystem.Properties.Resources.refresh;
             this.pictureBox1.Location = new System.Drawing.Point(705, 451);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 26);

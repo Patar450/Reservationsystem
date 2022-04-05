@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoatInfo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lblClientInformation = new System.Windows.Forms.Label();
             this.gpbxClientDetails = new System.Windows.Forms.GroupBox();
-            this.Combobtfree = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.combopax = new System.Windows.Forms.ComboBox();
@@ -57,15 +55,17 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txtbx_BoatSearch = new System.Windows.Forms.TextBox();
             this.Boat_GridView = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.RadioYes = new System.Windows.Forms.RadioButton();
+            this.RadioNo = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.gpbxClientDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boat_GridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,7 +102,8 @@
             // 
             // gpbxClientDetails
             // 
-            this.gpbxClientDetails.Controls.Add(this.Combobtfree);
+            this.gpbxClientDetails.Controls.Add(this.RadioNo);
+            this.gpbxClientDetails.Controls.Add(this.RadioYes);
             this.gpbxClientDetails.Controls.Add(this.label10);
             this.gpbxClientDetails.Controls.Add(this.label4);
             this.gpbxClientDetails.Controls.Add(this.combopax);
@@ -128,18 +129,6 @@
             this.gpbxClientDetails.TabIndex = 22;
             this.gpbxClientDetails.TabStop = false;
             this.gpbxClientDetails.Text = "Boat Details";
-            // 
-            // Combobtfree
-            // 
-            this.Combobtfree.FormattingEnabled = true;
-            this.Combobtfree.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.Combobtfree.Location = new System.Drawing.Point(134, 358);
-            this.Combobtfree.Name = "Combobtfree";
-            this.Combobtfree.Size = new System.Drawing.Size(71, 21);
-            this.Combobtfree.Sorted = true;
-            this.Combobtfree.TabIndex = 29;
             // 
             // label10
             // 
@@ -442,18 +431,6 @@
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(722, 520);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btn_Search
             // 
             this.btn_Search.BackColor = System.Drawing.Color.DodgerBlue;
@@ -498,6 +475,44 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Reservationsystem.Properties.Resources.refresh;
+            this.pictureBox1.Location = new System.Drawing.Point(722, 520);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // RadioYes
+            // 
+            this.RadioYes.AutoSize = true;
+            this.RadioYes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioYes.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.RadioYes.Location = new System.Drawing.Point(121, 354);
+            this.RadioYes.Name = "RadioYes";
+            this.RadioYes.Size = new System.Drawing.Size(53, 23);
+            this.RadioYes.TabIndex = 30;
+            this.RadioYes.TabStop = true;
+            this.RadioYes.Text = "Yes";
+            this.RadioYes.UseVisualStyleBackColor = true;
+            // 
+            // RadioNo
+            // 
+            this.RadioNo.AutoSize = true;
+            this.RadioNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioNo.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.RadioNo.Location = new System.Drawing.Point(177, 354);
+            this.RadioNo.Name = "RadioNo";
+            this.RadioNo.Size = new System.Drawing.Size(49, 23);
+            this.RadioNo.TabIndex = 31;
+            this.RadioNo.TabStop = true;
+            this.RadioNo.Text = "No";
+            this.RadioNo.UseVisualStyleBackColor = true;
+            // 
             // BoatInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,8 +535,8 @@
             this.panel1.PerformLayout();
             this.gpbxClientDetails.ResumeLayout(false);
             this.gpbxClientDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Boat_GridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,7 +566,6 @@
         private System.Windows.Forms.ComboBox comboYear;
         private System.Windows.Forms.TextBox txbxboatrent;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox Combobtfree;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
@@ -561,5 +575,7 @@
         private System.Windows.Forms.TextBox txtbx_BoatSearch;
         private System.Windows.Forms.DataGridView Boat_GridView;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.RadioButton RadioNo;
+        private System.Windows.Forms.RadioButton RadioYes;
     }
 }

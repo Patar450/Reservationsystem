@@ -140,5 +140,12 @@ namespace Reservationsystem
             Boat_GridView.DataSource = ds.Tables[0];
             Con.Close();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainBooking mainBooking = new MainBooking();
+            mainBooking.Show();
+            this.Hide();
+        }
     }
 }

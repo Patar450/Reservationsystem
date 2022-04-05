@@ -53,6 +53,7 @@
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpbxClientDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Staff_GridView)).BeginInit();
@@ -324,12 +325,27 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBack.Location = new System.Drawing.Point(748, 451);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.TabIndex = 31;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1167, 511);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Add);
@@ -381,5 +397,6 @@
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

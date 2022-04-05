@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lblClientInformation = new System.Windows.Forms.Label();
             this.gpbxReservationDetails = new System.Windows.Forms.GroupBox();
+            this.ComboBoat = new System.Windows.Forms.ComboBox();
+            this.ComboClient = new System.Windows.Forms.ComboBox();
+            this.Dateout = new System.Windows.Forms.DateTimePicker();
+            this.Datein = new System.Windows.Forms.DateTimePicker();
             this.txbxReservationID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbxBoatname = new System.Windows.Forms.TextBox();
-            this.txbxClientName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,12 +47,12 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbxReservationsearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpbxReservationDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Reservation_GridView)).BeginInit();
@@ -65,18 +68,19 @@
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1201, 100);
+            this.panel1.Size = new System.Drawing.Size(1034, 100);
             this.panel1.TabIndex = 2;
             // 
             // lbl_Date
             // 
             this.lbl_Date.AutoSize = true;
             this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Date.Location = new System.Drawing.Point(997, 58);
+            this.lbl_Date.Location = new System.Drawing.Point(820, 58);
             this.lbl_Date.Name = "lbl_Date";
             this.lbl_Date.Size = new System.Drawing.Size(101, 42);
             this.lbl_Date.TabIndex = 1;
             this.lbl_Date.Text = "Date";
+            this.lbl_Date.Click += new System.EventHandler(this.lbl_Date_Click);
             // 
             // lblClientInformation
             // 
@@ -90,13 +94,13 @@
             // 
             // gpbxReservationDetails
             // 
-            this.gpbxReservationDetails.Controls.Add(this.dateTimePicker2);
-            this.gpbxReservationDetails.Controls.Add(this.dateTimePicker1);
+            this.gpbxReservationDetails.Controls.Add(this.ComboBoat);
+            this.gpbxReservationDetails.Controls.Add(this.ComboClient);
+            this.gpbxReservationDetails.Controls.Add(this.Dateout);
+            this.gpbxReservationDetails.Controls.Add(this.Datein);
             this.gpbxReservationDetails.Controls.Add(this.txbxReservationID);
             this.gpbxReservationDetails.Controls.Add(this.label7);
             this.gpbxReservationDetails.Controls.Add(this.label1);
-            this.gpbxReservationDetails.Controls.Add(this.txbxBoatname);
-            this.gpbxReservationDetails.Controls.Add(this.txbxClientName);
             this.gpbxReservationDetails.Controls.Add(this.label2);
             this.gpbxReservationDetails.Controls.Add(this.label3);
             this.gpbxReservationDetails.Controls.Add(this.label5);
@@ -106,6 +110,46 @@
             this.gpbxReservationDetails.TabIndex = 22;
             this.gpbxReservationDetails.TabStop = false;
             this.gpbxReservationDetails.Text = "Reservation Details";
+            // 
+            // ComboBoat
+            // 
+            this.ComboBoat.FormattingEnabled = true;
+            this.ComboBoat.Items.AddRange(new object[] {
+            ""});
+            this.ComboBoat.Location = new System.Drawing.Point(174, 95);
+            this.ComboBoat.Name = "ComboBoat";
+            this.ComboBoat.Size = new System.Drawing.Size(136, 21);
+            this.ComboBoat.TabIndex = 24;
+            // 
+            // ComboClient
+            // 
+            this.ComboClient.FormattingEnabled = true;
+            this.ComboClient.Location = new System.Drawing.Point(6, 95);
+            this.ComboClient.Name = "ComboClient";
+            this.ComboClient.Size = new System.Drawing.Size(136, 21);
+            this.ComboClient.TabIndex = 23;
+            // 
+            // Dateout
+            // 
+            this.Dateout.CalendarForeColor = System.Drawing.Color.DodgerBlue;
+            this.Dateout.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
+            this.Dateout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dateout.Location = new System.Drawing.Point(76, 164);
+            this.Dateout.Name = "Dateout";
+            this.Dateout.Size = new System.Drawing.Size(178, 27);
+            this.Dateout.TabIndex = 22;
+            this.Dateout.ValueChanged += new System.EventHandler(this.Dateout_ValueChanged);
+            // 
+            // Datein
+            // 
+            this.Datein.CalendarForeColor = System.Drawing.Color.DodgerBlue;
+            this.Datein.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
+            this.Datein.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datein.Location = new System.Drawing.Point(76, 127);
+            this.Datein.Name = "Datein";
+            this.Datein.Size = new System.Drawing.Size(178, 27);
+            this.Datein.TabIndex = 21;
+            this.Datein.ValueChanged += new System.EventHandler(this.Datein_ValueChanged);
             // 
             // txbxReservationID
             // 
@@ -135,20 +179,6 @@
             this.label1.Size = new System.Drawing.Size(105, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Reservation ID";
-            // 
-            // txbxBoatname
-            // 
-            this.txbxBoatname.Location = new System.Drawing.Point(174, 95);
-            this.txbxBoatname.Name = "txbxBoatname";
-            this.txbxBoatname.Size = new System.Drawing.Size(136, 20);
-            this.txbxBoatname.TabIndex = 19;
-            // 
-            // txbxClientName
-            // 
-            this.txbxClientName.Location = new System.Drawing.Point(6, 95);
-            this.txbxClientName.Name = "txbxClientName";
-            this.txbxClientName.Size = new System.Drawing.Size(136, 20);
-            this.txbxClientName.TabIndex = 3;
             // 
             // label2
             // 
@@ -195,8 +225,9 @@
             this.Reservation_GridView.ReadOnly = true;
             this.Reservation_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Reservation_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Reservation_GridView.Size = new System.Drawing.Size(790, 329);
+            this.Reservation_GridView.Size = new System.Drawing.Size(630, 329);
             this.Reservation_GridView.TabIndex = 23;
+            this.Reservation_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Reservation_GridView_CellContentClick);
             // 
             // btn_Delete
             // 
@@ -210,6 +241,7 @@
             this.btn_Delete.TabIndex = 28;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -223,6 +255,7 @@
             this.btn_Edit.TabIndex = 27;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
@@ -236,26 +269,7 @@
             this.btn_Add.TabIndex = 26;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DodgerBlue;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(76, 127);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePicker1.TabIndex = 21;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.Color.DodgerBlue;
-            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(76, 164);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePicker2.TabIndex = 22;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // pictureBox2
             // 
@@ -267,6 +281,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // button1
             // 
@@ -282,14 +297,15 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "Search by Boat";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txbxReservationsearch
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(534, 475);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 32;
+            this.txbxReservationsearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbxReservationsearch.Location = new System.Drawing.Point(534, 475);
+            this.txbxReservationsearch.Name = "txbxReservationsearch";
+            this.txbxReservationsearch.Size = new System.Drawing.Size(171, 20);
+            this.txbxReservationsearch.TabIndex = 32;
             // 
             // comboBox1
             // 
@@ -302,15 +318,34 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 35;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBack.Location = new System.Drawing.Point(931, 463);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.TabIndex = 36;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 523);
+            this.ClientSize = new System.Drawing.Size(1034, 523);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbxReservationsearch);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Add);
@@ -319,7 +354,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reservation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservation";
+            this.Load += new System.EventHandler(this.Reservation_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gpbxReservationDetails.ResumeLayout(false);
@@ -340,8 +377,6 @@
         private System.Windows.Forms.TextBox txbxReservationID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbxBoatname;
-        private System.Windows.Forms.TextBox txbxClientName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -349,11 +384,15 @@
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Add;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker Datein;
+        private System.Windows.Forms.DateTimePicker Dateout;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbxReservationsearch;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox ComboBoat;
+        private System.Windows.Forms.ComboBox ComboClient;
+        private System.Windows.Forms.Button btnBack;
     }
 }

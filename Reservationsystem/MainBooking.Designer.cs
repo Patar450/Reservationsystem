@@ -101,6 +101,7 @@
             this.btn_Client_Details.TabIndex = 4;
             this.btn_Client_Details.Text = "Edit Client Details";
             this.btn_Client_Details.UseVisualStyleBackColor = true;
+            this.btn_Client_Details.Click += new System.EventHandler(this.btn_Client_Details_Click);
             // 
             // btn_Boat_Details
             // 
@@ -110,6 +111,7 @@
             this.btn_Boat_Details.TabIndex = 5;
             this.btn_Boat_Details.Text = "Edit Boat Details";
             this.btn_Boat_Details.UseVisualStyleBackColor = true;
+            this.btn_Boat_Details.Click += new System.EventHandler(this.btn_Boat_Details_Click);
             // 
             // btn_Staff_Details
             // 
@@ -119,6 +121,7 @@
             this.btn_Staff_Details.TabIndex = 6;
             this.btn_Staff_Details.Text = "Edit Staff Details";
             this.btn_Staff_Details.UseVisualStyleBackColor = true;
+            this.btn_Staff_Details.Click += new System.EventHandler(this.btn_Staff_Details_Click);
             // 
             // btn_Reservation_Details
             // 
@@ -128,6 +131,7 @@
             this.btn_Reservation_Details.TabIndex = 7;
             this.btn_Reservation_Details.Text = "Edit Reservation Details";
             this.btn_Reservation_Details.UseVisualStyleBackColor = true;
+            this.btn_Reservation_Details.Click += new System.EventHandler(this.btn_Reservation_Details_Click);
             // 
             // pictureBox1
             // 
@@ -228,6 +232,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainBooking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainBooking";
             ((System.ComponentModel.ISupportInitialize)(this.Staffpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

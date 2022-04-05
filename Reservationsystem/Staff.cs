@@ -113,5 +113,12 @@ namespace Reservationsystem
             //Updates timer every tick: making look like time is sychnonized with the clock.
             lbl_Date.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainBooking mainBooking = new MainBooking();
+            mainBooking.Show();
+            this.Hide();
+        }
     }
 }

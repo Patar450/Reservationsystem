@@ -33,6 +33,8 @@
             this.lbl_Date = new System.Windows.Forms.Label();
             this.lblClientInformation = new System.Windows.Forms.Label();
             this.gpbxClientDetails = new System.Windows.Forms.GroupBox();
+            this.RadioNo = new System.Windows.Forms.RadioButton();
+            this.RadioYes = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.combopax = new System.Windows.Forms.ComboBox();
@@ -60,8 +62,7 @@
             this.Boat_GridView = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.RadioYes = new System.Windows.Forms.RadioButton();
-            this.RadioNo = new System.Windows.Forms.RadioButton();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpbxClientDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Boat_GridView)).BeginInit();
@@ -129,6 +130,32 @@
             this.gpbxClientDetails.TabIndex = 22;
             this.gpbxClientDetails.TabStop = false;
             this.gpbxClientDetails.Text = "Boat Details";
+            // 
+            // RadioNo
+            // 
+            this.RadioNo.AutoSize = true;
+            this.RadioNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioNo.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.RadioNo.Location = new System.Drawing.Point(177, 354);
+            this.RadioNo.Name = "RadioNo";
+            this.RadioNo.Size = new System.Drawing.Size(49, 23);
+            this.RadioNo.TabIndex = 31;
+            this.RadioNo.TabStop = true;
+            this.RadioNo.Text = "No";
+            this.RadioNo.UseVisualStyleBackColor = true;
+            // 
+            // RadioYes
+            // 
+            this.RadioYes.AutoSize = true;
+            this.RadioYes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadioYes.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.RadioYes.Location = new System.Drawing.Point(121, 354);
+            this.RadioYes.Name = "RadioYes";
+            this.RadioYes.Size = new System.Drawing.Size(53, 23);
+            this.RadioYes.TabIndex = 30;
+            this.RadioYes.TabStop = true;
+            this.RadioYes.Text = "Yes";
+            this.RadioYes.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -487,37 +514,26 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // RadioYes
+            // btnBack
             // 
-            this.RadioYes.AutoSize = true;
-            this.RadioYes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioYes.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.RadioYes.Location = new System.Drawing.Point(121, 354);
-            this.RadioYes.Name = "RadioYes";
-            this.RadioYes.Size = new System.Drawing.Size(53, 23);
-            this.RadioYes.TabIndex = 30;
-            this.RadioYes.TabStop = true;
-            this.RadioYes.Text = "Yes";
-            this.RadioYes.UseVisualStyleBackColor = true;
-            // 
-            // RadioNo
-            // 
-            this.RadioNo.AutoSize = true;
-            this.RadioNo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RadioNo.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.RadioNo.Location = new System.Drawing.Point(177, 354);
-            this.RadioNo.Name = "RadioNo";
-            this.RadioNo.Size = new System.Drawing.Size(49, 23);
-            this.RadioNo.TabIndex = 31;
-            this.RadioNo.TabStop = true;
-            this.RadioNo.Text = "No";
-            this.RadioNo.UseVisualStyleBackColor = true;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBack.Location = new System.Drawing.Point(770, 513);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.TabIndex = 30;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // BoatInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1485, 595);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Boat_GridView);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_Search);
@@ -577,5 +593,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.RadioButton RadioNo;
         private System.Windows.Forms.RadioButton RadioYes;
+        private System.Windows.Forms.Button btnBack;
     }
 }

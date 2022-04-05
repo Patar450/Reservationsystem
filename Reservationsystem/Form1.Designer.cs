@@ -77,6 +77,7 @@
             // 
             this.txbxpasswrd.Location = new System.Drawing.Point(96, 124);
             this.txbxpasswrd.Name = "txbxpasswrd";
+            this.txbxpasswrd.PasswordChar = '*';
             this.txbxpasswrd.Size = new System.Drawing.Size(100, 20);
             this.txbxpasswrd.TabIndex = 3;
             // 

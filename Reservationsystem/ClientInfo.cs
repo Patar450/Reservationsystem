@@ -114,5 +114,12 @@ namespace Reservationsystem
             populate();
             txtbx_ClientSearch.Clear();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainBooking frm = new MainBooking();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

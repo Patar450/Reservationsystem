@@ -50,7 +50,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txbxReservationsearch = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -307,17 +306,6 @@
             this.txbxReservationsearch.Size = new System.Drawing.Size(171, 20);
             this.txbxReservationsearch.TabIndex = 32;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Free ",
-            "Busy"});
-            this.comboBox1.Location = new System.Drawing.Point(405, 475);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 35;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -342,7 +330,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 523);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txbxReservationsearch);
@@ -389,7 +376,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txbxReservationsearch;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox ComboBoat;
         private System.Windows.Forms.ComboBox ComboClient;

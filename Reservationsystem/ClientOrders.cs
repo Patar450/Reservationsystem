@@ -94,6 +94,7 @@ namespace Reservationsystem
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            /*
             Con.Open();
             //Checks what is the next Id number.
             SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Reservation_tbl ", Con);
@@ -107,6 +108,7 @@ namespace Reservationsystem
             Con.Close();
             updatereservations();
             populate();
+            */
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -183,6 +185,24 @@ namespace Reservationsystem
             {
                 MessageBox.Show("Please, pick a future date.");
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            populate();
+            txtbx_ReservationSearch.Clear();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string mysql = "Select * from Reservation_tbl where ReservationID = '" + txtbx_ReservationSearch.Text + "'";
+            SqlDataAdapter da = new SqlDataAdapter(mysql, Con);
+            SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            Reservation_GridView.DataSource = ds.Tables[0];
+            Con.Close();
         }
     }
 }

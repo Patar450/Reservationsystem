@@ -133,6 +133,7 @@
             // 
             // txbxClientName
             // 
+            this.txbxClientName.Enabled = false;
             this.txbxClientName.Location = new System.Drawing.Point(6, 95);
             this.txbxClientName.Name = "txbxClientName";
             this.txbxClientName.Size = new System.Drawing.Size(136, 20);
@@ -235,7 +236,7 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 38);
             this.btn_Add.TabIndex = 25;
-            this.btn_Add.Text = "Add";
+            this.btn_Add.Text = "Book";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
@@ -262,6 +263,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Search
             // 
@@ -277,6 +279,7 @@
             this.btn_Search.TabIndex = 33;
             this.btn_Search.Text = "Search by ID";
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txtbx_ReservationSearch
             // 

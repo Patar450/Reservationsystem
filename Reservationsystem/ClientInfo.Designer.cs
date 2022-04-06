@@ -53,6 +53,8 @@
             this.txbxClientSurname = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.gpbxClientDetails = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbxAddress = new System.Windows.Forms.TextBox();
             this.Client_GridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -71,7 +73,7 @@
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1166, 100);
+            this.panel1.Size = new System.Drawing.Size(1219, 100);
             this.panel1.TabIndex = 0;
             // 
             // lbl_Date
@@ -123,7 +125,7 @@
             // 
             this.txbxClientPhone.Location = new System.Drawing.Point(6, 150);
             this.txbxClientPhone.Name = "txbxClientPhone";
-            this.txbxClientPhone.Size = new System.Drawing.Size(304, 20);
+            this.txbxClientPhone.Size = new System.Drawing.Size(136, 20);
             this.txbxClientPhone.TabIndex = 4;
             // 
             // label2
@@ -152,16 +154,201 @@
             // 
             this.comboCountry.FormattingEnabled = true;
             this.comboCountry.Items.AddRange(new object[] {
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei ",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Central African Republic",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo (Congo-Brazzaville)",
+            "Costa Rica",
+            "Côte d\'Ivoire",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czechia (Czech Republic)",
+            "Democratic Republic of the Congo",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini (fmr. \"Swaziland\")",
+            "Ethiopia",
+            "Fiji",
+            "Finland",
             "France",
+            "Gabon",
+            "Gambia",
+            "Georgia",
             "Germany",
+            "Ghana",
             "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Holy See",
+            "Honduras",
+            "Hungary",
+            "Iceland",
             "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
             "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
             "Malta",
+            "Marshall Islands",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Micronesia",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar (formerly Burma)",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "North Korea",
+            "North Macedonia",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Palestine State",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome and Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Korea",
+            "South Sudan",
             "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Timor-Leste",
+            "Togo",
+            "Tonga",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
             "United Kingdom",
-            "United States of America"});
-            this.comboCountry.Location = new System.Drawing.Point(6, 295);
+            "United States of America",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"});
+            this.comboCountry.Location = new System.Drawing.Point(174, 150);
             this.comboCountry.Name = "comboCountry";
             this.comboCountry.Size = new System.Drawing.Size(121, 21);
             this.comboCountry.Sorted = true;
@@ -172,7 +359,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(6, 274);
+            this.label4.Location = new System.Drawing.Point(171, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 18);
             this.label4.TabIndex = 8;
@@ -194,7 +381,7 @@
             // 
             // txbxClientUser
             // 
-            this.txbxClientUser.Location = new System.Drawing.Point(6, 203);
+            this.txbxClientUser.Location = new System.Drawing.Point(6, 250);
             this.txbxClientUser.Name = "txbxClientUser";
             this.txbxClientUser.Size = new System.Drawing.Size(304, 20);
             this.txbxClientUser.TabIndex = 11;
@@ -204,7 +391,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(6, 182);
+            this.label5.Location = new System.Drawing.Point(4, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 18);
             this.label5.TabIndex = 12;
@@ -271,7 +458,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(6, 230);
+            this.label6.Location = new System.Drawing.Point(6, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 18);
             this.label6.TabIndex = 18;
@@ -279,7 +466,7 @@
             // 
             // txbxClientPassword
             // 
-            this.txbxClientPassword.Location = new System.Drawing.Point(6, 251);
+            this.txbxClientPassword.Location = new System.Drawing.Point(6, 294);
             this.txbxClientPassword.Name = "txbxClientPassword";
             this.txbxClientPassword.Size = new System.Drawing.Size(304, 20);
             this.txbxClientPassword.TabIndex = 17;
@@ -304,26 +491,46 @@
             // 
             // gpbxClientDetails
             // 
+            this.gpbxClientDetails.Controls.Add(this.label8);
+            this.gpbxClientDetails.Controls.Add(this.txbxAddress);
             this.gpbxClientDetails.Controls.Add(this.txtbxClientID);
             this.gpbxClientDetails.Controls.Add(this.label7);
             this.gpbxClientDetails.Controls.Add(this.label1);
             this.gpbxClientDetails.Controls.Add(this.txbxClientSurname);
-            this.gpbxClientDetails.Controls.Add(this.txbxClientName);
             this.gpbxClientDetails.Controls.Add(this.label6);
-            this.gpbxClientDetails.Controls.Add(this.txbxClientPhone);
+            this.gpbxClientDetails.Controls.Add(this.txbxClientName);
             this.gpbxClientDetails.Controls.Add(this.txbxClientPassword);
+            this.gpbxClientDetails.Controls.Add(this.txbxClientUser);
+            this.gpbxClientDetails.Controls.Add(this.label5);
+            this.gpbxClientDetails.Controls.Add(this.txbxClientPhone);
             this.gpbxClientDetails.Controls.Add(this.label2);
             this.gpbxClientDetails.Controls.Add(this.label3);
             this.gpbxClientDetails.Controls.Add(this.comboCountry);
             this.gpbxClientDetails.Controls.Add(this.label4);
-            this.gpbxClientDetails.Controls.Add(this.txbxClientUser);
-            this.gpbxClientDetails.Controls.Add(this.label5);
             this.gpbxClientDetails.Location = new System.Drawing.Point(16, 115);
             this.gpbxClientDetails.Name = "gpbxClientDetails";
             this.gpbxClientDetails.Size = new System.Drawing.Size(336, 329);
             this.gpbxClientDetails.TabIndex = 21;
             this.gpbxClientDetails.TabStop = false;
             this.gpbxClientDetails.Text = "Client Details";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(3, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 18);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Address:";
+            // 
+            // txbxAddress
+            // 
+            this.txbxAddress.Location = new System.Drawing.Point(6, 197);
+            this.txbxAddress.Name = "txbxAddress";
+            this.txbxAddress.Size = new System.Drawing.Size(304, 20);
+            this.txbxAddress.TabIndex = 32;
             // 
             // Client_GridView
             // 
@@ -337,7 +544,7 @@
             this.Client_GridView.ReadOnly = true;
             this.Client_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Client_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Client_GridView.Size = new System.Drawing.Size(790, 329);
+            this.Client_GridView.Size = new System.Drawing.Size(837, 329);
             this.Client_GridView.TabIndex = 22;
             this.Client_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Client_GridView_CellContentClick);
             // 
@@ -371,7 +578,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 511);
+            this.ClientSize = new System.Drawing.Size(1219, 502);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Client_GridView);
@@ -427,5 +634,7 @@
         private System.Windows.Forms.DataGridView Client_GridView;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txbxAddress;
     }
 }

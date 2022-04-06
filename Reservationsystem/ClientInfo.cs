@@ -53,7 +53,7 @@ namespace Reservationsystem
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Client_tbl values('"+ txtbxClientID.Text + "','"+txbxClientName.Text+ "','"+txbxClientSurname.Text+"','"+txbxClientPhone.Text+"','"+ comboCountry.SelectedItem.ToString()+"','"+ txbxClientUser.Text + "','" + txbxClientPassword.Text + "')", Con);
+            SqlCommand cmd = new SqlCommand("insert into Client_tbl values('"+ txtbxClientID.Text + "','"+txbxClientName.Text+ "','"+txbxClientSurname.Text+"','"+txbxClientPhone.Text+"','" +txbxAddress.Text+ "','"+ comboCountry.SelectedItem.ToString()+"','"+ txbxClientUser.Text + "','" + txbxClientPassword.Text + "')", Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Client Successfully Added");
             Con.Close();
@@ -65,7 +65,7 @@ namespace Reservationsystem
         {
             //Edits text from the CliendId.
             Con.Open();
-            string myquery = "UPDATE Client_tbl set ClientName = '" + txbxClientName.Text + "', ClientSurname = '" + txbxClientSurname.Text + "', ClientPhone = '" + txbxClientPhone.Text + "', ClientCountry =' " + comboCountry.Text + "', ClientUsername ='" + txbxClientUser.Text + "', ClientPassword =' " + txbxClientPassword.Text + "' where ClientId = '"+ txtbxClientID.Text + "';";
+            string myquery = "UPDATE Client_tbl set ClientName = '" + txbxClientName.Text + "', ClientSurname = '" + txbxClientSurname.Text + "', ClientPhone = '" + txbxClientPhone.Text + "', ClientAddress = '"+txbxAddress.Text+"', ClientCountry =' " + comboCountry.Text + "', ClientUsername ='" + txbxClientUser.Text + "', ClientPassword =' " + txbxClientPassword.Text + "' where ClientId = '"+ txtbxClientID.Text + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Client Successfully Edited");
@@ -91,9 +91,10 @@ namespace Reservationsystem
             txbxClientName.Text = Client_GridView.SelectedRows[0].Cells[1].Value.ToString();
             txbxClientSurname.Text = Client_GridView.SelectedRows[0].Cells[2].Value.ToString();
             txbxClientPhone.Text = Client_GridView.SelectedRows[0].Cells[3].Value.ToString();
-            comboCountry.Text = Client_GridView.SelectedRows[0].Cells[4].Value.ToString();
-            txbxClientUser.Text = Client_GridView.SelectedRows[0].Cells[5].Value.ToString();
-            txbxClientPassword.Text = Client_GridView.SelectedRows[0].Cells[6].Value.ToString();
+            txbxAddress.Text = Client_GridView.SelectedRows[0].Cells[4].Value.ToString();
+            comboCountry.Text = Client_GridView.SelectedRows[0].Cells[5].Value.ToString();
+            txbxClientUser.Text = Client_GridView.SelectedRows[0].Cells[6].Value.ToString();
+            txbxClientPassword.Text = Client_GridView.SelectedRows[0].Cells[7].Value.ToString();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)

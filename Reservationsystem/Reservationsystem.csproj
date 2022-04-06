@@ -67,17 +67,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminUser.cs" />
     <Compile Include="BoatInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BoatInfo.Designer.cs">
       <DependentUpon>BoatInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientdetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientdetail.Designer.cs">
+      <DependentUpon>Clientdetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClientInfo.Designer.cs">
       <DependentUpon>ClientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientOrders.Designer.cs">
+      <DependentUpon>ClientOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -93,6 +106,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,17 +124,30 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientScreen.Designer.cs">
+      <DependentUpon>ClientScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Startup.Designer.cs">
       <DependentUpon>Startup.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="BoatInfo.resx">
       <DependentUpon>BoatInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clientdetail.resx">
+      <DependentUpon>Clientdetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientInfo.resx">
       <DependentUpon>ClientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientOrders.resx">
+      <DependentUpon>ClientOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -133,11 +165,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientScreen.resx">
+      <DependentUpon>ClientScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Startup.resx">
       <DependentUpon>Startup.cs</DependentUpon>
@@ -163,6 +201,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Boat.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\private-yacth.png" />
+    <None Include="Resources\fishing.png" />
+    <None Include="Resources\user%281%29.png" />
+    <None Include="Resources\information.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\key.png" />
     <None Include="Resources\user.png" />

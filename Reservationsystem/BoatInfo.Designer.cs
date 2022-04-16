@@ -113,13 +113,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.txtbx_BoatSearch = new System.Windows.Forms.TextBox();
             this.Boat_GridView = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnclear = new System.Windows.Forms.Button();
             this.comboservice = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -135,7 +131,6 @@
             this.groupBox1.SuspendLayout();
             this.Measurements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Boat_GridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1075,38 +1070,13 @@
             this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Add.Location = new System.Drawing.Point(1104, 788);
+            this.btn_Add.Location = new System.Drawing.Point(901, 875);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(75, 38);
+            this.btn_Add.Size = new System.Drawing.Size(175, 42);
             this.btn_Add.TabIndex = 23;
             this.btn_Add.Text = "Rent";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Search.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_Search.FlatAppearance.BorderSize = 0;
-            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(894, 756);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(155, 26);
-            this.btn_Search.TabIndex = 27;
-            this.btn_Search.Text = "Search by Name";
-            this.btn_Search.UseVisualStyleBackColor = false;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // txtbx_BoatSearch
-            // 
-            this.txtbx_BoatSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbx_BoatSearch.Location = new System.Drawing.Point(717, 761);
-            this.txtbx_BoatSearch.Name = "txtbx_BoatSearch";
-            this.txtbx_BoatSearch.Size = new System.Drawing.Size(171, 20);
-            this.txtbx_BoatSearch.TabIndex = 26;
-            this.txtbx_BoatSearch.TextChanged += new System.EventHandler(this.txtbx_BoatSearch_TextChanged);
             // 
             // Boat_GridView
             // 
@@ -1121,7 +1091,7 @@
             this.Boat_GridView.ReadOnly = true;
             this.Boat_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Boat_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Boat_GridView.Size = new System.Drawing.Size(797, 637);
+            this.Boat_GridView.Size = new System.Drawing.Size(797, 763);
             this.Boat_GridView.TabIndex = 29;
             this.Boat_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Boat_GridView_CellContentClick);
             // 
@@ -1129,45 +1099,19 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Reservationsystem.Properties.Resources.refresh;
-            this.pictureBox1.Location = new System.Drawing.Point(1067, 756);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBack.Location = new System.Drawing.Point(599, 788);
+            this.btnBack.Location = new System.Drawing.Point(1291, 879);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 38);
             this.btnBack.TabIndex = 30;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnclear
-            // 
-            this.btnclear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnclear.FlatAppearance.BorderSize = 0;
-            this.btnclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnclear.Location = new System.Drawing.Point(680, 787);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(75, 38);
-            this.btnclear.TabIndex = 31;
-            this.btnclear.Text = "Clear";
-            this.btnclear.UseVisualStyleBackColor = true;
-            this.btnclear.Click += new System.EventHandler(this.btnclear_Click_1);
             // 
             // comboservice
             // 
@@ -1201,12 +1145,8 @@
             this.ClientSize = new System.Drawing.Size(1408, 929);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.comboservice);
-            this.Controls.Add(this.btnclear);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.Boat_GridView);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_Search);
-            this.Controls.Add(this.txtbx_BoatSearch);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.gpbxClientDetails);
             this.Controls.Add(this.panel1);
@@ -1240,7 +1180,6 @@
             this.Measurements.ResumeLayout(false);
             this.Measurements.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Boat_GridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1263,9 +1202,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Add;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.TextBox txtbx_BoatSearch;
         private System.Windows.Forms.DataGridView Boat_GridView;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnBack;
@@ -1313,7 +1249,6 @@
         private System.Windows.Forms.TextBox txbxcancel;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txbxcharter;
-        private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.GroupBox gpbxparty;
         private System.Windows.Forms.RadioButton radioDrinks;
         private System.Windows.Forms.RadioButton radioFood;

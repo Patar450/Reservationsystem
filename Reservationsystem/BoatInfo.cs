@@ -61,6 +61,7 @@ namespace Reservationsystem
             
             //Loads Method called populate.
             populate();
+            MessageBox.Show("Choose from the service combobox to get started :)");
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -238,68 +239,12 @@ namespace Reservationsystem
             RadioNo.Checked = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            //image taken from: https://www.flaticon.com/free-icons/refresh Refresh icons created by Vectors Market - Flaticon
-            populate();
-            txtbx_BoatSearch.Clear();
-        }
-
-        private void btn_Search_Click(object sender, EventArgs e)
-        {
-            Con.Open();
-            string mysql = "Select * from Boat_tbl where BoatName = '" + txtbx_BoatSearch.Text + "'";
-            SqlDataAdapter da = new SqlDataAdapter(mysql, Con);
-            SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
-            Boat_GridView.DataSource = ds.Tables[0];
-            Con.Close();
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             ClientScreen client = new ClientScreen();
             client.Show();
             this.Hide();
         }
-
-        private void txtbx_BoatSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnclear_Click_1(object sender, EventArgs e)
-        {
-            txbxBoatID.Clear();
-            txbxname.Clear();
-            txbxcharter.Clear();
-            txbxprice.Clear();
-            txbxport.Clear();
-            txbxtype.Clear();
-            txbxmodel.Clear();
-            txbxmanu.Clear();
-            txbxlenght.Clear();
-            txbxbeam.Clear();
-            txbxdraft.Clear();
-            txbxyear.Clear();
-            txbxspeed.Clear();
-            txbxcrew.Clear();
-            txbxenginetype.Clear();
-            txbxengine.Clear();
-            txbxpax.Clear();
-            txbxcabin.Clear();
-            txbxbed.Clear();
-            txbxshower.Clear();
-            txbxwater.Clear();
-            txbxcap.Clear();
-            txbxfuelcons.Clear();
-            txbxcancel.Clear();
-
-            RadioYes.Checked = false;
-            RadioNo.Checked = false;
-        }
-
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 

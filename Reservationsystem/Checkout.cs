@@ -165,6 +165,11 @@ namespace Reservationsystem
             if (res < 0)
             {
                 MessageBox.Show("Please, pick a future date.");
+                btn_lock.Enabled = false;
+            }
+            else
+            {
+                btn_lock.Enabled = true;
             }
 
         }
@@ -176,6 +181,11 @@ namespace Reservationsystem
             if (res < 0)
             {
                 MessageBox.Show("Please, pick a future date.");
+                btn_lock.Enabled = false;
+            }
+            else
+            {
+                btn_lock.Enabled = true;
             }
         }
 
@@ -195,7 +205,7 @@ namespace Reservationsystem
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Reservation_tbl values('" + txbxReservationID.Text + "','" + txbxname.Text + "','" + txbxBoatname.Text + "','" + Datein.Text + "','" + Dateout.Text + "','"+txbxaddress.Text+"','"+txbxphone.Text+"','"+txbxpricetotal.Text+"')", Con);
+            SqlCommand cmd = new SqlCommand("insert into Reservation_tbl values('" + txbxReservationID.Text + "','" + txbxname.Text + "','" + txbxBoatname.Text + "','" + Datein.Text + "','" + Dateout.Text + "','"+txbxaddress.Text+"','"+txbxphone.Text+"','"+txbxpricetotal.Text+"','"+Global.price+"')", Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Reservation Successfully Added");
             Con.Close();
@@ -206,7 +216,6 @@ namespace Reservationsystem
             string myquery = "UPDATE Boat_tbl set Availability = 'No' where Boat_Id = '" + boatid1 + "';";
             SqlCommand cmd1 = new SqlCommand(myquery, Con);
             cmd1.ExecuteNonQuery();
-            MessageBox.Show("Boat Successfully Booked");
             Con.Close();
 
             LeaveaReview leaveaReview = new LeaveaReview();

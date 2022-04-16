@@ -90,7 +90,7 @@ namespace Reservationsystem
             }
             else
             {
-                MessageBox.Show("Registration complete. Returning to login form.");
+                
                 
                 //Checks what is the next Id number.
                 SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl ", conn);
@@ -100,7 +100,7 @@ namespace Reservationsystem
                 int counter = 1 + Int32.Parse(savedata);
                 SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password +"','"+admin+ "')", conn);
                 cmd.ExecuteNonQuery();
-
+                MessageBox.Show("Registration complete. Returning to login form.");
                 conn.Close();
                 Form1 form1 = new Form1();
                 form1.Show();

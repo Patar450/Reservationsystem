@@ -48,17 +48,24 @@ namespace Reservationsystem
             }
             else
             {
+                string richtext = null;
+                try
+                {
+                    richtext = string.Concat(rctxbxreview.Text.Where(char.IsLetterOrDigit));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please, ensure to type only letters and numbers, no special charaters.");
+                }
+
                 //Checks what is the next Id number.
                 Con.Open();
-                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Reservation_tbl ", Con);
+                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Review_tbl", Con);
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
                 string savedata = dt1.Rows[0][0].ToString();
                 int counter = 1 + Int32.Parse(savedata);
-                Con.Close();
-
-                string richtext = rctxbxreview.Text;
-                Con.Open();
+                MessageBox.Show("Review Message number :"+counter);
                 SqlCommand cmd = new SqlCommand("insert into Review_tbl values('" + counter + "','" + txbxname.Text + "','" + richtext + "')", Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Reservation Successfully Added");

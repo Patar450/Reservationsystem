@@ -102,6 +102,12 @@
     <Compile Include="ClientOrders.Designer.cs">
       <DependentUpon>ClientOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditClientOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClientOrders.Designer.cs">
+      <DependentUpon>EditClientOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="FishingSer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="MainBooking.Designer.cs">
       <DependentUpon>MainBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyOrders.Designer.cs">
+      <DependentUpon>MyOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Privatecharter.cs" />
     <Compile Include="Program.cs" />
@@ -176,6 +188,9 @@
     <EmbeddedResource Include="ClientOrders.resx">
       <DependentUpon>ClientOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditClientOrders.resx">
+      <DependentUpon>EditClientOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainBooking.resx">
       <DependentUpon>MainBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyOrders.resx">
+      <DependentUpon>MyOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -23,6 +23,7 @@ namespace Reservationsystem
             public static string country;
             public static string username;
             public static string password;
+            public static string admin;
         }
 
         //Linking SQl Database
@@ -51,47 +52,33 @@ namespace Reservationsystem
             //Open connecttion to the Database
             conn.Open();
 
-            //Checks if the user name can be found as a staff.
-            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Staff_tbl where Staffusername = '"+ txtbxusernm.Text + "' and Staffpassword='"+ txbxpasswrd.Text+ "'",conn);
-            DataTable dt=new DataTable();
-            sda.Fill(dt);
-
             //If statement to prompt user if the account entered matched the details stored in the Database.
-            if (dt.Rows[0][0].ToString() == "1")
+            //Checks if the user name can be found as a Client.
+            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+
+            if (dt1.Rows[0][0].ToString() == "1")
             {
+                //Grabs the name from the database to show is on the welcome sign in form ClienScreen.
+                SqlDataAdapter sda2 = new SqlDataAdapter("select * from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
+                DataTable dt2 = new DataTable();
+                sda2.Fill(dt2);
+
+                Global.counter = dt2.Rows[0][0].ToString();
+                Global.name = dt2.Rows[0][1].ToString();
+                Global.lastname = dt2.Rows[0][2].ToString();
+                Global.phone = dt2.Rows[0][3].ToString();
+                Global.address = dt2.Rows[0][4].ToString();
+                Global.country = dt2.Rows[0][5].ToString();
+                Global.username = dt2.Rows[0][6].ToString();
+                Global.password = dt2.Rows[0][7].ToString();
+                Global.admin = dt2.Rows[0][8].ToString();
+
                 //if credentials are correct the login box will 'hide' and load the main form.
-                MainBooking mf = new MainBooking();
+                ClientScreen mf = new ClientScreen();
                 mf.Show();
                 this.Hide();
-            }
-            else if (dt.Rows[0][0].ToString() == "0")
-            {
-                //Checks if the user name can be found as a Client.
-                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
-                DataTable dt1 = new DataTable();
-                sda1.Fill(dt1);
-
-                if (dt1.Rows[0][0].ToString() == "1")
-                {
-                    //Grabs the name from the database to show is on the welcome sign in form ClienScreen.
-                    SqlDataAdapter sda2 = new SqlDataAdapter("select * from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
-                    DataTable dt2 = new DataTable();
-                    sda2.Fill(dt2);
-
-                    Global.counter = dt2.Rows[0][0].ToString();
-                    Global.name = dt2.Rows[0][1].ToString();
-                    Global.lastname = dt2.Rows[0][2].ToString();
-                    Global.phone = dt2.Rows[0][3].ToString();
-                    Global.address = dt2.Rows[0][4].ToString();
-                    Global.country = dt2.Rows[0][5].ToString();
-                    Global.username = dt2.Rows[0][6].ToString();
-                    Global.password = dt2.Rows[0][7].ToString();
-
-                    //if credentials are correct the login box will 'hide' and load the main form.
-                    ClientScreen mf = new ClientScreen();
-                    mf.Show();
-                    this.Hide();
-                }
             }
             else
             {

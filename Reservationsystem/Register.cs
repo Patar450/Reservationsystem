@@ -30,6 +30,7 @@ namespace Reservationsystem
         public static string country;
         public static string username;
         public static string password;
+        public static string admin;
         
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,6 +60,15 @@ namespace Reservationsystem
             country = comboCountry.SelectedItem.ToString();
             username = txbxusername.Text;
             password = txbxpassword.Text;
+
+            if (chbxadmin.Checked == true)
+            {
+                admin = "Admin";
+            }
+            else
+            {
+                admin = "User";
+            }
             //Open connecttion to the Database
             conn.Open();
 
@@ -88,7 +98,7 @@ namespace Reservationsystem
                 sda1.Fill(dt1);
                 string savedata = dt1.Rows[0][0].ToString();
                 int counter = 1 + Int32.Parse(savedata);
-                SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password + "')", conn);
+                SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password +"','"+admin+ "')", conn);
                 cmd.ExecuteNonQuery();
 
                 conn.Close();

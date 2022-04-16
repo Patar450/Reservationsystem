@@ -13,7 +13,20 @@ namespace Reservationsystem
 {
     public partial class ClientScreen : Form
     {
-        
+        //Establishes a connection to the SQL Database.
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
+
+        public void populate()
+        {
+            Con.Open();
+            string mysql = "Select * from Review_tbl;";
+            SqlDataAdapter da = new SqlDataAdapter(mysql, Con);
+            SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            Boat_GridView.DataSource = ds.Tables[0];
+            Con.Close();
+        }
         public ClientScreen()
         {
             InitializeComponent();
@@ -39,7 +52,7 @@ namespace Reservationsystem
         {
             timer1.Start();
             lblClientInformation.Text = "Welcome " + Form1.Global.name;
-         
+            populate();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -74,6 +87,23 @@ namespace Reservationsystem
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             //Image Obtained from: "https://www.flaticon.com/free-icons/document" Document icons created by Freepik - Flaticon
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BoatInfo fish = new BoatInfo();
+            fish.Show();
+        }
+
+        private void Boat_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

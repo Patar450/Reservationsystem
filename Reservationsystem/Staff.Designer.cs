@@ -278,6 +278,7 @@
             this.txtbx_StaffSearch.Name = "txtbx_StaffSearch";
             this.txtbx_StaffSearch.Size = new System.Drawing.Size(171, 20);
             this.txtbx_StaffSearch.TabIndex = 25;
+            this.txtbx_StaffSearch.TextChanged += new System.EventHandler(this.txtbx_StaffSearch_TextChanged);
             // 
             // btn_Delete
             // 

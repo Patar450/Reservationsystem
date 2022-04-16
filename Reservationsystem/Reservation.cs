@@ -31,7 +31,6 @@ namespace Reservationsystem
             da.Fill(ds);
             Reservation_GridView.DataSource = ds.Tables[0];
             Con.Close();
-
         }
         public Reservation()
         {

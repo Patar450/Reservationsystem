@@ -120,5 +120,10 @@ namespace Reservationsystem
             mainBooking.Show();
             this.Hide();
         }
+
+        private void txtbx_StaffSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

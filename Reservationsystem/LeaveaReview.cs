@@ -65,10 +65,9 @@ namespace Reservationsystem
                 sda1.Fill(dt1);
                 string savedata = dt1.Rows[0][0].ToString();
                 int counter = 1 + Int32.Parse(savedata);
-                MessageBox.Show("Review Message number :"+counter);
                 SqlCommand cmd = new SqlCommand("insert into Review_tbl values('" + counter + "','" + txbxname.Text + "','" + richtext + "')", Con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Reservation Successfully Added");
+                MessageBox.Show("Review Successfully Added");
                 Con.Close();
 
                 ClientScreen clientScreen = new ClientScreen();

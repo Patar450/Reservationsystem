@@ -54,37 +54,50 @@ namespace Reservationsystem
 
             //If statement to prompt user if the account entered matched the details stored in the Database.
             //Checks if the user name can be found as a Client.
-            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
+            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "' and Admin='Admin'", conn);
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
-
             if (dt1.Rows[0][0].ToString() == "1")
             {
-                //Grabs the name from the database to show is on the welcome sign in form ClienScreen.
-                SqlDataAdapter sda2 = new SqlDataAdapter("select * from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
-                DataTable dt2 = new DataTable();
-                sda2.Fill(dt2);
-
-                Global.counter = dt2.Rows[0][0].ToString();
-                Global.name = dt2.Rows[0][1].ToString();
-                Global.lastname = dt2.Rows[0][2].ToString();
-                Global.phone = dt2.Rows[0][3].ToString();
-                Global.address = dt2.Rows[0][4].ToString();
-                Global.country = dt2.Rows[0][5].ToString();
-                Global.username = dt2.Rows[0][6].ToString();
-                Global.password = dt2.Rows[0][7].ToString();
-                Global.admin = dt2.Rows[0][8].ToString();
-
-                //if credentials are correct the login box will 'hide' and load the main form.
-                ClientScreen mf = new ClientScreen();
-                mf.Show();
+                MainBooking frm = new MainBooking();
+                frm.ShowDialog();
                 this.Hide();
             }
             else
             {
-                //if credentials are incorrect the user will be prompt that one of the credentials are incorrect.
-                MessageBox.Show("Wrong Username or Password");
+                SqlDataAdapter sda3 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
+                DataTable dt3 = new DataTable();
+                sda3.Fill(dt3);
+
+                if (dt3.Rows[0][0].ToString() == "1")
+                {
+                    //Grabs the name from the database to show is on the welcome sign in form ClienScreen.
+                    SqlDataAdapter sda2 = new SqlDataAdapter("select * from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "'", conn);
+                    DataTable dt2 = new DataTable();
+                    sda2.Fill(dt2);
+
+                    Global.counter = dt2.Rows[0][0].ToString();
+                    Global.name = dt2.Rows[0][1].ToString();
+                    Global.lastname = dt2.Rows[0][2].ToString();
+                    Global.phone = dt2.Rows[0][3].ToString();
+                    Global.address = dt2.Rows[0][4].ToString();
+                    Global.country = dt2.Rows[0][5].ToString();
+                    Global.username = dt2.Rows[0][6].ToString();
+                    Global.password = dt2.Rows[0][7].ToString();
+                    Global.admin = dt2.Rows[0][8].ToString();
+
+                    //if credentials are correct the login box will 'hide' and load the main form.
+                    ClientScreen mf = new ClientScreen();
+                    mf.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    //if credentials are incorrect the user will be prompt that one of the credentials are incorrect.
+                    MessageBox.Show("Wrong Username or Password");
+                }
             }
+            
             conn.Close();
         }
 

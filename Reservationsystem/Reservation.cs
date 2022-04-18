@@ -40,8 +40,8 @@ namespace Reservationsystem
         private void fillBoatcombo()
         {
             Con.Open();
-            string boatstate = "Free";
-            SqlCommand cmd = new SqlCommand("Select BoatName from Boat_tbl where BoatFree = '"+boatstate+"'", Con);
+            string boatstate = "Yes";
+            SqlCommand cmd = new SqlCommand("Select BoatName from Boat_tbl where Availability = '"+boatstate+"'", Con);
             SqlDataReader rdr;
             rdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -69,8 +69,8 @@ namespace Reservationsystem
         public void updatereservations()
         {
             Con.Open();
-            string remove = "Busy";
-            string myquery = "UPDATE Boat_tbl set BoatFree = '" +remove+ "' where BoatName = '" +ComboBoat.SelectedValue.ToString() + "';";
+            string remove = "No";
+            string myquery = "UPDATE Boat_tbl set Availability = '" +remove+ "' where BoatName = '" +ComboBoat.SelectedValue.ToString() + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
             Con.Close();
@@ -80,7 +80,7 @@ namespace Reservationsystem
         public void deletereservations()
         {
             Con.Open();
-            string remove = "Free";
+            string remove = "Yes";
             string BoatName = Reservation_GridView.SelectedRows[0].Cells[2].Value.ToString();
             string myquery = "UPDATE Boat_tbl set BoatFree = '" + remove + "' where BoatName = '" + BoatName + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
@@ -91,15 +91,16 @@ namespace Reservationsystem
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            
-
             Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Reservation_tbl values('" + txbxReservationID.Text + "','" + ComboClient.SelectedValue.ToString() + "','" + ComboBoat.SelectedValue.ToString() + "','"  +Datein.Text + "','" +Dateout.Text+ "')", Con);
+            SqlCommand cmd = new SqlCommand("insert into Reservation_tbl values('" + txbxReservationID.Text + "','" + ComboClient.SelectedValue.ToString() + "','" + ComboBoat.SelectedValue.ToString() + "','"  +Datein.Text + "','" +Dateout.Text+"','"+txbxAddress.Text+"','"+txbxPhone.Text+"','"+txbxpricetotal.Text+"','"+txbxprice.Text+"')", Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Reservation Successfully Added");
             Con.Close();
             updatereservations();
             populate();
+
+            btn_Confirm.Visible = false;
+            btn_Addnew.Visible = true;
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -112,10 +113,10 @@ namespace Reservationsystem
             {
                 //Edits text from the Reservation_tbl.
                 Con.Open();
-                string myquery = "UPDATE Reservation_tbl set Client = '" + ComboClient.SelectedValue.ToString() + "', Boat = '" + ComboBoat.SelectedValue.ToString() + "', DateIn = '" + Datein.Value + "', DateOut =' " + Dateout.Value + "' where ReservationId = '" + txbxReservationID.Text + "';";
+                string myquery = "UPDATE Reservation_tbl set ClientName = '" + ComboClient.SelectedValue.ToString() + "', BoatName = '" + ComboBoat.SelectedValue.ToString() + "', DateIn = '" + Datein.Value + "', DateOut =' " + Dateout.Value + "' where ReservationId = '" + txbxReservationID.Text + "';";
                 SqlCommand cmd = new SqlCommand(myquery, Con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Client Successfully Edited");
+                MessageBox.Show("Booking Successfully Edited");
                 Con.Close();
                 populate();
             }
@@ -134,7 +135,7 @@ namespace Reservationsystem
                 string query = "delete from Reservation_tbl where ReservationId = " + txbxReservationID.Text + "";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Reservation Successfully Deleted");
+                MessageBox.Show("Reservation Deleted");
                 Con.Close();
                 deletereservations();
                 populate();
@@ -154,7 +155,7 @@ namespace Reservationsystem
             // grabs the date today and stor it in today.
             today = Datein.Value;
 
-
+            
             //Converts the date into a long format: hh:mm:ss
             lbl_Date.Text = DateTime.Now.ToLongTimeString();
             //when form starts enable timer.
@@ -164,6 +165,12 @@ namespace Reservationsystem
             //loads combo boxes with pre existing data from database
             fillBoatcombo();
             fillClientcombo();
+            txbxprice.Text = "";
+            ComboBoat.Text = "";
+            ComboClient.Text = "";
+            txbxPhone.Text = "";
+            txbxAddress.Text = "";
+            txbxpricetotal.Text = "0";
         }
 
         private void Datein_ValueChanged(object sender, EventArgs e)
@@ -184,6 +191,7 @@ namespace Reservationsystem
             {
                 MessageBox.Show("Please, pick a future date.");
             }
+           
         }
 
         private void Reservation_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -193,7 +201,13 @@ namespace Reservationsystem
             ComboBoat.Text = Reservation_GridView.SelectedRows[0].Cells[2].Value.ToString();
             Datein.Text = Reservation_GridView.SelectedRows[0].Cells[3].Value.ToString();
             Dateout.Text = Reservation_GridView.SelectedRows[0].Cells[4].Value.ToString();
-           
+            txbxAddress.Text = Reservation_GridView.SelectedRows[0].Cells[5].Value.ToString();
+            txbxPhone.Text = Reservation_GridView.SelectedRows[0].Cells[6].Value.ToString();
+            txbxpricetotal.Text = Reservation_GridView.SelectedRows[0].Cells[7].Value.ToString();
+            txbxprice.Text = Reservation_GridView.SelectedRows[0].Cells[8].Value.ToString();
+
+
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -225,6 +239,78 @@ namespace Reservationsystem
             MainBooking mainBooking = new MainBooking();
             mainBooking.Show();
             this.Hide();
+        }
+
+        private void ComboClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboClient.Text == "")
+            {
+
+            }
+            else
+            {
+
+                SqlDataAdapter cmd = new SqlDataAdapter("Select * from Client_tbl where ClientName ='" + ComboClient.Text + "'", Con);
+                DataTable dt2 = new DataTable();
+                cmd.Fill(dt2);
+                txbxAddress.Text = dt2.Rows[0][4].ToString();
+                txbxPhone.Text = dt2.Rows[0][3].ToString();
+                Con.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Reservation_tbl ", Con);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            string savedata = dt1.Rows[0][0].ToString();
+            int counter = 1 + Int32.Parse(savedata);
+            txbxReservationID.Text = counter.ToString();
+            Con.Close();
+
+            ComboBoat.Text = "";
+            ComboClient.Text = "";
+            txbxAddress.Clear();
+            txbxPhone.Clear();
+            txbxprice.Clear();
+            fillBoatcombo();
+
+            btn_Addnew.Visible = false;
+            btn_Confirm.Visible = true;
+        }
+
+        private void ComboBoat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (ComboBoat.Text == "")
+            {
+
+            }
+            else
+            {
+               
+                SqlDataAdapter cmd = new SqlDataAdapter("Select Price from Boat_tbl where BoatName ='"+ComboBoat.Text +"'", Con);
+                DataTable dt2 = new DataTable();
+                cmd.Fill(dt2);
+                txbxprice.Text = dt2.Rows[0][0].ToString();
+                Con.Close();
+            }
+            
+        }
+
+        private void btn_lock_Click(object sender, EventArgs e)
+        {
+            Datein.Enabled = false;
+            Dateout.Enabled = false;
+
+            var numberofdays = (Dateout.Value - Datein.Value).Days;
+            int num = Convert.ToInt32(numberofdays);
+            int totalpricez;
+            totalpricez = num * Convert.ToInt32(txbxprice.Text);
+            txbxpricetotal.Text = Convert.ToString(totalpricez);
+            MessageBox.Show("Total price is now: " + totalpricez);
         }
     }
 }

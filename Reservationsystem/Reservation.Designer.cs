@@ -46,12 +46,22 @@
             this.Reservation_GridView = new System.Windows.Forms.DataGridView();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Confirm = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txbxReservationsearch = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnBack = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txbxprice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbxPhone = new System.Windows.Forms.TextBox();
+            this.txbxAddress = new System.Windows.Forms.TextBox();
+            this.btn_Addnew = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txbxpricetotal = new System.Windows.Forms.TextBox();
+            this.btn_lock = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpbxReservationDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Reservation_GridView)).BeginInit();
@@ -93,6 +103,15 @@
             // 
             // gpbxReservationDetails
             // 
+            this.gpbxReservationDetails.Controls.Add(this.btn_lock);
+            this.gpbxReservationDetails.Controls.Add(this.txbxpricetotal);
+            this.gpbxReservationDetails.Controls.Add(this.label9);
+            this.gpbxReservationDetails.Controls.Add(this.txbxAddress);
+            this.gpbxReservationDetails.Controls.Add(this.txbxPhone);
+            this.gpbxReservationDetails.Controls.Add(this.label8);
+            this.gpbxReservationDetails.Controls.Add(this.label6);
+            this.gpbxReservationDetails.Controls.Add(this.txbxprice);
+            this.gpbxReservationDetails.Controls.Add(this.label4);
             this.gpbxReservationDetails.Controls.Add(this.ComboBoat);
             this.gpbxReservationDetails.Controls.Add(this.ComboClient);
             this.gpbxReservationDetails.Controls.Add(this.Dateout);
@@ -105,7 +124,7 @@
             this.gpbxReservationDetails.Controls.Add(this.label5);
             this.gpbxReservationDetails.Location = new System.Drawing.Point(34, 125);
             this.gpbxReservationDetails.Name = "gpbxReservationDetails";
-            this.gpbxReservationDetails.Size = new System.Drawing.Size(336, 251);
+            this.gpbxReservationDetails.Size = new System.Drawing.Size(336, 327);
             this.gpbxReservationDetails.TabIndex = 22;
             this.gpbxReservationDetails.TabStop = false;
             this.gpbxReservationDetails.Text = "Reservation Details";
@@ -119,6 +138,7 @@
             this.ComboBoat.Name = "ComboBoat";
             this.ComboBoat.Size = new System.Drawing.Size(136, 21);
             this.ComboBoat.TabIndex = 24;
+            this.ComboBoat.SelectedIndexChanged += new System.EventHandler(this.ComboBoat_SelectedIndexChanged);
             // 
             // ComboClient
             // 
@@ -127,6 +147,7 @@
             this.ComboClient.Name = "ComboClient";
             this.ComboClient.Size = new System.Drawing.Size(136, 21);
             this.ComboClient.TabIndex = 23;
+            this.ComboClient.SelectedIndexChanged += new System.EventHandler(this.ComboClient_SelectedIndexChanged);
             // 
             // Dateout
             // 
@@ -152,6 +173,7 @@
             // 
             // txbxReservationID
             // 
+            this.txbxReservationID.Enabled = false;
             this.txbxReservationID.Location = new System.Drawing.Point(6, 44);
             this.txbxReservationID.Name = "txbxReservationID";
             this.txbxReservationID.Size = new System.Drawing.Size(304, 20);
@@ -195,7 +217,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(16, 134);
+            this.label3.Location = new System.Drawing.Point(3, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 18);
             this.label3.TabIndex = 6;
@@ -217,6 +239,7 @@
             this.Reservation_GridView.AllowUserToAddRows = false;
             this.Reservation_GridView.AllowUserToDeleteRows = false;
             this.Reservation_GridView.AllowUserToOrderColumns = true;
+            this.Reservation_GridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Reservation_GridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Reservation_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Reservation_GridView.Location = new System.Drawing.Point(376, 125);
@@ -234,7 +257,7 @@
             this.btn_Delete.FlatAppearance.BorderSize = 0;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Delete.Location = new System.Drawing.Point(229, 401);
+            this.btn_Delete.Location = new System.Drawing.Point(269, 457);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 38);
             this.btn_Delete.TabIndex = 28;
@@ -248,7 +271,7 @@
             this.btn_Edit.FlatAppearance.BorderSize = 0;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Edit.Location = new System.Drawing.Point(148, 401);
+            this.btn_Edit.Location = new System.Drawing.Point(156, 457);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 38);
             this.btn_Edit.TabIndex = 27;
@@ -256,19 +279,20 @@
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // btn_Add
+            // btn_Confirm
             // 
-            this.btn_Add.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_Add.FlatAppearance.BorderSize = 0;
-            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Add.Location = new System.Drawing.Point(67, 401);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(75, 38);
-            this.btn_Add.TabIndex = 26;
-            this.btn_Add.Text = "Add";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_Confirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Confirm.FlatAppearance.BorderSize = 0;
+            this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Confirm.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Confirm.Location = new System.Drawing.Point(34, 457);
+            this.btn_Confirm.Name = "btn_Confirm";
+            this.btn_Confirm.Size = new System.Drawing.Size(95, 38);
+            this.btn_Confirm.TabIndex = 26;
+            this.btn_Confirm.Text = "Confirm";
+            this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Visible = false;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // pictureBox2
             // 
@@ -294,7 +318,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 26);
             this.button1.TabIndex = 33;
-            this.button1.Text = "Search by Boat";
+            this.button1.Text = "Search by Res_ID";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -324,18 +348,121 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(3, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 18);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Base Costs (Euro)";
+            // 
+            // txbxprice
+            // 
+            this.txbxprice.Enabled = false;
+            this.txbxprice.Location = new System.Drawing.Point(141, 208);
+            this.txbxprice.Name = "txbxprice";
+            this.txbxprice.Size = new System.Drawing.Size(102, 20);
+            this.txbxprice.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label6.Location = new System.Drawing.Point(3, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 18);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Phone:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(3, 270);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 18);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Address:";
+            // 
+            // txbxPhone
+            // 
+            this.txbxPhone.Location = new System.Drawing.Point(75, 242);
+            this.txbxPhone.Name = "txbxPhone";
+            this.txbxPhone.Size = new System.Drawing.Size(102, 20);
+            this.txbxPhone.TabIndex = 29;
+            // 
+            // txbxAddress
+            // 
+            this.txbxAddress.Location = new System.Drawing.Point(75, 270);
+            this.txbxAddress.Name = "txbxAddress";
+            this.txbxAddress.Size = new System.Drawing.Size(226, 20);
+            this.txbxAddress.TabIndex = 30;
+            // 
+            // btn_Addnew
+            // 
+            this.btn_Addnew.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Addnew.FlatAppearance.BorderSize = 0;
+            this.btn_Addnew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Addnew.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Addnew.Location = new System.Drawing.Point(34, 457);
+            this.btn_Addnew.Name = "btn_Addnew";
+            this.btn_Addnew.Size = new System.Drawing.Size(101, 38);
+            this.btn_Addnew.TabIndex = 37;
+            this.btn_Addnew.Text = "Add New";
+            this.btn_Addnew.UseVisualStyleBackColor = true;
+            this.btn_Addnew.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label9.Location = new System.Drawing.Point(6, 297);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 18);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "TotalCosts:";
+            // 
+            // txbxpricetotal
+            // 
+            this.txbxpricetotal.Enabled = false;
+            this.txbxpricetotal.Location = new System.Drawing.Point(95, 297);
+            this.txbxpricetotal.Name = "txbxpricetotal";
+            this.txbxpricetotal.Size = new System.Drawing.Size(148, 20);
+            this.txbxpricetotal.TabIndex = 32;
+            // 
+            // btn_lock
+            // 
+            this.btn_lock.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_lock.FlatAppearance.BorderSize = 0;
+            this.btn_lock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lock.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btn_lock.Location = new System.Drawing.Point(260, 134);
+            this.btn_lock.Name = "btn_lock";
+            this.btn_lock.Size = new System.Drawing.Size(59, 52);
+            this.btn_lock.TabIndex = 33;
+            this.btn_lock.Text = "Lock Date";
+            this.btn_lock.UseVisualStyleBackColor = true;
+            this.btn_lock.Click += new System.EventHandler(this.btn_lock_Click);
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 523);
+            this.Controls.Add(this.btn_Addnew);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txbxReservationsearch);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Edit);
-            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.btn_Confirm);
             this.Controls.Add(this.Reservation_GridView);
             this.Controls.Add(this.gpbxReservationDetails);
             this.Controls.Add(this.panel1);
@@ -370,7 +497,7 @@
         private System.Windows.Forms.DataGridView Reservation_GridView;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
-        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.DateTimePicker Datein;
         private System.Windows.Forms.DateTimePicker Dateout;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -380,5 +507,15 @@
         private System.Windows.Forms.ComboBox ComboBoat;
         private System.Windows.Forms.ComboBox ComboClient;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txbxprice;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txbxAddress;
+        private System.Windows.Forms.TextBox txbxPhone;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Addnew;
+        private System.Windows.Forms.TextBox txbxpricetotal;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_lock;
     }
 }

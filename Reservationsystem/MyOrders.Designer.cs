@@ -71,26 +71,26 @@
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1042, 100);
+            this.panel1.Size = new System.Drawing.Size(1730, 192);
             this.panel1.TabIndex = 4;
             // 
             // lbl_Date
             // 
             this.lbl_Date.AutoSize = true;
-            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Date.Location = new System.Drawing.Point(829, 58);
+            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Date.Location = new System.Drawing.Point(1283, 67);
             this.lbl_Date.Name = "lbl_Date";
-            this.lbl_Date.Size = new System.Drawing.Size(101, 42);
+            this.lbl_Date.Size = new System.Drawing.Size(251, 108);
             this.lbl_Date.TabIndex = 2;
             this.lbl_Date.Text = "Date";
             // 
             // lblClientInformation
             // 
             this.lblClientInformation.AutoSize = true;
-            this.lblClientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientInformation.Location = new System.Drawing.Point(27, 24);
+            this.lblClientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientInformation.Location = new System.Drawing.Point(38, 67);
             this.lblClientInformation.Name = "lblClientInformation";
-            this.lblClientInformation.Size = new System.Drawing.Size(201, 42);
+            this.lblClientInformation.Size = new System.Drawing.Size(501, 108);
             this.lblClientInformation.TabIndex = 0;
             this.lblClientInformation.Text = "My Orders";
             // 
@@ -105,7 +105,7 @@
             this.Reservation_GridView.AllowUserToOrderColumns = true;
             this.Reservation_GridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Reservation_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Reservation_GridView.Location = new System.Drawing.Point(400, 124);
+            this.Reservation_GridView.Location = new System.Drawing.Point(577, 365);
             this.Reservation_GridView.Name = "Reservation_GridView";
             this.Reservation_GridView.ReadOnly = true;
             this.Reservation_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -133,9 +133,9 @@
             this.gpbxReservationDetails.Controls.Add(this.label2);
             this.gpbxReservationDetails.Controls.Add(this.label3);
             this.gpbxReservationDetails.Controls.Add(this.label5);
-            this.gpbxReservationDetails.Location = new System.Drawing.Point(34, 128);
+            this.gpbxReservationDetails.Location = new System.Drawing.Point(143, 365);
             this.gpbxReservationDetails.Name = "gpbxReservationDetails";
-            this.gpbxReservationDetails.Size = new System.Drawing.Size(360, 325);
+            this.gpbxReservationDetails.Size = new System.Drawing.Size(358, 329);
             this.gpbxReservationDetails.TabIndex = 25;
             this.gpbxReservationDetails.TabStop = false;
             this.gpbxReservationDetails.Text = "Reservation Details";
@@ -321,9 +321,9 @@
             this.btn_Delete.FlatAppearance.BorderSize = 0;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Delete.Location = new System.Drawing.Point(297, 455);
+            this.btn_Delete.Location = new System.Drawing.Point(435, 742);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 38);
+            this.btn_Delete.Size = new System.Drawing.Size(145, 72);
             this.btn_Delete.TabIndex = 31;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -335,9 +335,9 @@
             this.btn_Edit.FlatAppearance.BorderSize = 0;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Edit.Location = new System.Drawing.Point(72, 455);
+            this.btn_Edit.Location = new System.Drawing.Point(143, 742);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(75, 38);
+            this.btn_Edit.Size = new System.Drawing.Size(142, 72);
             this.btn_Edit.TabIndex = 30;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
@@ -350,9 +350,9 @@
             this.btnconfirm.FlatAppearance.BorderSize = 0;
             this.btnconfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconfirm.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnconfirm.Location = new System.Drawing.Point(175, 455);
+            this.btnconfirm.Location = new System.Drawing.Point(291, 742);
             this.btnconfirm.Name = "btnconfirm";
-            this.btnconfirm.Size = new System.Drawing.Size(91, 38);
+            this.btnconfirm.Size = new System.Drawing.Size(138, 72);
             this.btnconfirm.TabIndex = 32;
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = true;
@@ -362,11 +362,11 @@
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Location = new System.Drawing.Point(805, 459);
+            this.button1.Location = new System.Drawing.Point(1399, 969);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 38);
+            this.button1.Size = new System.Drawing.Size(307, 64);
             this.button1.TabIndex = 33;
             this.button1.Text = "Back To Main Menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -375,7 +375,7 @@
             // txbxprice
             // 
             this.txbxprice.Enabled = false;
-            this.txbxprice.Location = new System.Drawing.Point(274, 106);
+            this.txbxprice.Location = new System.Drawing.Point(359, 251);
             this.txbxprice.Name = "txbxprice";
             this.txbxprice.Size = new System.Drawing.Size(38, 20);
             this.txbxprice.TabIndex = 34;
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 518);
+            this.ClientSize = new System.Drawing.Size(1730, 1045);
             this.Controls.Add(this.txbxprice);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gpbxReservationDetails);
@@ -398,6 +398,7 @@
             this.Name = "MyOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyOrders";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MyOrders_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

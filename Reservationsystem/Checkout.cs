@@ -217,9 +217,9 @@ namespace Reservationsystem
             SqlCommand cmd1 = new SqlCommand(myquery, Con);
             cmd1.ExecuteNonQuery();
             Con.Close();
-
-            LeaveaReview leaveaReview = new LeaveaReview();
-            leaveaReview.Show();
+            
+            ClientScreen client = new ClientScreen();
+            client.Show();
             this.Hide();
         }
 

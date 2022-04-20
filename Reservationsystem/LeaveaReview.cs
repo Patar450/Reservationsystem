@@ -28,6 +28,9 @@ namespace Reservationsystem
 
         private void LeaveaReview_Load(object sender, EventArgs e)
         {
+            
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
             txbxname.Text = Form1.Global.name;
         }
 

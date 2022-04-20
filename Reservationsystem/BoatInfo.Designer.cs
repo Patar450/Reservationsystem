@@ -142,26 +142,26 @@
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1408, 100);
+            this.panel1.Size = new System.Drawing.Size(1839, 134);
             this.panel1.TabIndex = 1;
             // 
             // lbl_Date
             // 
             this.lbl_Date.AutoSize = true;
-            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Date.Location = new System.Drawing.Point(1232, 58);
+            this.lbl_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Date.Location = new System.Drawing.Point(1333, 9);
             this.lbl_Date.Name = "lbl_Date";
-            this.lbl_Date.Size = new System.Drawing.Size(101, 42);
+            this.lbl_Date.Size = new System.Drawing.Size(251, 108);
             this.lbl_Date.TabIndex = 1;
             this.lbl_Date.Text = "Date";
             // 
             // lblClientInformation
             // 
             this.lblClientInformation.AutoSize = true;
-            this.lblClientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientInformation.Location = new System.Drawing.Point(27, 24);
+            this.lblClientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientInformation.Location = new System.Drawing.Point(12, 5);
             this.lblClientInformation.Name = "lblClientInformation";
-            this.lblClientInformation.Size = new System.Drawing.Size(437, 42);
+            this.lblClientInformation.Size = new System.Drawing.Size(1078, 108);
             this.lblClientInformation.TabIndex = 0;
             this.lblClientInformation.Text = "Fishing Boat Availability";
             // 
@@ -1070,9 +1070,9 @@
             this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Add.Location = new System.Drawing.Point(901, 875);
+            this.btn_Add.Location = new System.Drawing.Point(842, 959);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(175, 42);
+            this.btn_Add.Size = new System.Drawing.Size(391, 74);
             this.btn_Add.TabIndex = 23;
             this.btn_Add.Text = "Rent";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -1083,15 +1083,16 @@
             this.Boat_GridView.AllowUserToAddRows = false;
             this.Boat_GridView.AllowUserToDeleteRows = false;
             this.Boat_GridView.AllowUserToOrderColumns = true;
+            this.Boat_GridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.Boat_GridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Boat_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Boat_GridView.Enabled = false;
-            this.Boat_GridView.Location = new System.Drawing.Point(569, 107);
+            this.Boat_GridView.Location = new System.Drawing.Point(655, 190);
             this.Boat_GridView.Name = "Boat_GridView";
             this.Boat_GridView.ReadOnly = true;
             this.Boat_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Boat_GridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Boat_GridView.Size = new System.Drawing.Size(797, 763);
+            this.Boat_GridView.Size = new System.Drawing.Size(1144, 763);
             this.Boat_GridView.TabIndex = 29;
             this.Boat_GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Boat_GridView_CellContentClick);
             // 
@@ -1105,9 +1106,9 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBack.Location = new System.Drawing.Point(1291, 879);
+            this.btnBack.Location = new System.Drawing.Point(1580, 959);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.Size = new System.Drawing.Size(138, 74);
             this.btnBack.TabIndex = 30;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -1121,7 +1122,7 @@
             "Fishing",
             "Diving",
             "Charter"});
-            this.comboservice.Location = new System.Drawing.Point(179, 123);
+            this.comboservice.Location = new System.Drawing.Point(1073, 158);
             this.comboservice.Name = "comboservice";
             this.comboservice.Size = new System.Drawing.Size(121, 21);
             this.comboservice.TabIndex = 32;
@@ -1130,11 +1131,11 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label31.Location = new System.Drawing.Point(27, 123);
+            this.label31.Location = new System.Drawing.Point(802, 148);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(147, 18);
+            this.label31.Size = new System.Drawing.Size(265, 31);
             this.label31.TabIndex = 81;
             this.label31.Text = "Choose a service -->";
             // 
@@ -1142,7 +1143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 929);
+            this.ClientSize = new System.Drawing.Size(1839, 1045);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.comboservice);
             this.Controls.Add(this.btnBack);
@@ -1154,6 +1155,7 @@
             this.Name = "BoatInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BoatInfo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BoatInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

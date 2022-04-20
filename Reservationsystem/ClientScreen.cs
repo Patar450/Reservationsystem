@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Reservationsystem
 {
     public partial class ClientScreen : Form
     {
         //Establishes a connection to the SQL Database.
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
-
+        DateTime today;
+        private int res;
         public void populate()
         {
             Con.Open();
@@ -27,6 +29,53 @@ namespace Reservationsystem
             Boat_GridView.DataSource = ds.Tables[0];
             Con.Close();
         }
+
+        public void populateres()
+        {
+            Con.Open();
+            string mysql1 = "Select * from Reservation_tbl where Client='"+Form1.Global.name+"';";
+            SqlDataAdapter da1 = new SqlDataAdapter(mysql1, Con);
+            SqlCommandBuilder cbuilder1 = new SqlCommandBuilder(da1);
+            var ds1 = new DataSet();
+            da1.Fill(ds1);
+            ReservationsDateoutgrid.DataSource = ds1.Tables[0];
+            
+            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(DateOut) from Reservation_tbl ", Con);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            int countholder = Convert.ToInt32(dt1.Rows[0][0]);
+            Con.Close();
+            
+            for (int i = 0; i < countholder;  i++)
+            {
+
+                DateTime dateTime = Convert.ToDateTime(ReservationsDateoutgrid.Rows[i].Cells[4].Value.ToString());
+                DateTime today = DateTime.Now;
+                res = DateTime.Compare(dateTime, today);
+
+                if (res < 0)
+                {
+                    Con.Open();
+                    string myquery = "UPDATE Boat_tbl set Availability = 'Yes' where BoatName = '" + ReservationsDateoutgrid.Rows[i].Cells[2].Value.ToString() + "';";
+                    SqlCommand cmd1 = new SqlCommand(myquery, Con);
+                    cmd1.ExecuteNonQuery();
+                    Con.Close();
+
+                    Con.Open();
+                    string query = "delete from Reservation_tbl where BoatName = '" + ReservationsDateoutgrid.Rows[i].Cells[2].Value.ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    Con.Close();
+
+                    this.WindowState = FormWindowState.Minimized;
+                    MessageBox.Show("I can see that you've used our service before. Please leave a review to help us improve our services :)");
+                    LeaveaReview leaveaReview = new LeaveaReview();
+                    leaveaReview.Show();
+                    break;
+                }
+            }
+        }
+
         public ClientScreen()
         {
             InitializeComponent();
@@ -53,6 +102,11 @@ namespace Reservationsystem
             timer1.Start();
             lblClientInformation.Text = "Welcome " + Form1.Global.name;
             populate();
+
+            populateres();
+            
+            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -80,8 +134,9 @@ namespace Reservationsystem
         private void btnback_Click(object sender, EventArgs e)
         {
             Clientdetail clientdetail = new Clientdetail();
+            clientdetail.TopMost = true;
             clientdetail.Show();
-            this.Hide();
+           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -106,6 +161,12 @@ namespace Reservationsystem
         private void Boat_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+        }
+
+        private void ReservationsDateoutgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

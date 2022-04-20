@@ -31,6 +31,7 @@ namespace Reservationsystem
         public static string username;
         public static string password;
         public static string admin;
+        public static string locked;
         
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace Reservationsystem
             country = comboCountry.SelectedItem.ToString();
             username = txbxusername.Text;
             password = txbxpassword.Text;
+            locked = "No";
 
             if (chbxadmin.Checked == true)
             {
@@ -98,7 +100,7 @@ namespace Reservationsystem
                 sda1.Fill(dt1);
                 string savedata = dt1.Rows[0][0].ToString();
                 int counter = 1 + Int32.Parse(savedata);
-                SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password +"','"+admin+ "')", conn);
+                SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password +"','"+admin+"','"+locked+ "')", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Registration complete. Returning to login form.");
                 conn.Close();
@@ -117,13 +119,6 @@ namespace Reservationsystem
         private void Register_Load(object sender, EventArgs e)
         {
             comboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            //Open connecttion to the Database
-            conn.Open();
-
-            
-            
-            conn.Close();
         }
 
         private void txbxfirstname_TextChanged(object sender, EventArgs e)
@@ -149,6 +144,11 @@ namespace Reservationsystem
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbxadmin_CheckedChanged(object sender, EventArgs e)
         {
 
         }

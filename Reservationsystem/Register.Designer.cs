@@ -558,6 +558,7 @@
             this.chbxadmin.TabIndex = 11;
             this.chbxadmin.Text = "Admin";
             this.chbxadmin.UseVisualStyleBackColor = true;
+            this.chbxadmin.CheckedChanged += new System.EventHandler(this.chbxadmin_CheckedChanged);
             // 
             // Register
             // 

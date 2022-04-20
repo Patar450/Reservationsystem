@@ -59,20 +59,6 @@ namespace Reservationsystem
             this.Hide();
         }
 
-        private void btn_Client_Details_Click(object sender, EventArgs e)
-        {
-            ClientInfo clientInfo = new ClientInfo();
-            clientInfo.Show();
-            this.Hide();
-        }
-
-        private void btn_Staff_Details_Click(object sender, EventArgs e)
-        {
-            Staff staffinfo = new Staff();
-            staffinfo.Show();
-            this.Hide();
-        }
-
         private void btn_Boat_Details_Click(object sender, EventArgs e)
         {
             BoatInfo boatinfo = new BoatInfo();

@@ -29,7 +29,39 @@ namespace Reservationsystem
             Boat_GridView.DataSource = ds.Tables[0];
             Con.Close();
         }
+        private void showDialog(String message)
+        {
+            DialogForm dialog = new DialogForm(message);
+            dialog.TopMost = true;
+            dialog.Show();
+        }
+        public void ToastMessage()
+        {
+            SqlDataAdapter sda9 = new SqlDataAdapter("select COUNT(DateIn) from Reservation_tbl where Client = '" + Form1.Global.name + "'; ", Con);
+            DataTable dt9 = new DataTable();
+            sda9.Fill(dt9);
+            int countholder1 = Convert.ToInt32(dt9.Rows[0][0]);
+            Con.Close();
+            
+            for (int i = 0; i < countholder1; i++)
+            {
+               
+                DateTime dateTime = Convert.ToDateTime(ReservationsDateoutgrid.Rows[i].Cells[3].Value.ToString());
+                //MessageBox.Show("Date is: "+dateTime);
+                DateTime today = DateTime.Now;
+                //MessageBox.Show("today is: " + today);
+                res = DateTime.Compare(dateTime, today);
+                //MessageBox.Show("Difference is: " + res);
 
+                if (res < 0)
+                {
+                    
+                    string dateholder1 = dateTime.ToString();
+                    showDialog(dateholder1.Remove(10));
+                    break;
+                }
+            }
+        }
         public void populateres()
         {
             Con.Open();
@@ -40,12 +72,12 @@ namespace Reservationsystem
             da1.Fill(ds1);
             ReservationsDateoutgrid.DataSource = ds1.Tables[0];
             
-            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(DateOut) from Reservation_tbl ", Con);
+            SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(DateOut) from Reservation_tbl where Client='" + Form1.Global.name + "';", Con);
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
             int countholder = Convert.ToInt32(dt1.Rows[0][0]);
             Con.Close();
-            
+
             for (int i = 0; i < countholder;  i++)
             {
 
@@ -104,8 +136,8 @@ namespace Reservationsystem
             populate();
 
             populateres();
-            
-            
+
+            ToastMessage();
 
         }
 

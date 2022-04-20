@@ -104,7 +104,6 @@
             this.btn_Client_Details.TabIndex = 4;
             this.btn_Client_Details.Text = "Edit Client Details";
             this.btn_Client_Details.UseVisualStyleBackColor = true;
-            this.btn_Client_Details.Click += new System.EventHandler(this.btn_Client_Details_Click);
             // 
             // btn_Boat_Details
             // 
@@ -126,7 +125,7 @@
             this.btn_Staff_Details.TabIndex = 6;
             this.btn_Staff_Details.Text = "Edit Staff Details";
             this.btn_Staff_Details.UseVisualStyleBackColor = true;
-            this.btn_Staff_Details.Click += new System.EventHandler(this.btn_Staff_Details_Click);
+
             // 
             // btn_Reservation_Details
             // 

@@ -8,6 +8,9 @@ namespace Reservationsystem
 {
     internal class User
     {
+        //Creates a base class for User. For this version of the program not all attributes will be used in the amin program.
+        //However they are created in case a new feature will be needed to be able to create a new User (Admin or not) from the admin page. 
+        //In this version only the id,name,username,password,admin and locked will be used. The rest are all using the default values.
         private string id;
         private string name;
         private string surname;

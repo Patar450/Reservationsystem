@@ -21,8 +21,8 @@ namespace Reservationsystem
         //Linking SQl Database
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
 
-        // Variables
-       
+        // Variables to store temp account details to store them in an Object and use the methods in the classes as a security filtering system.  
+        // These variables are used in lines: 57 - 73, 82 & 103  
         public static string firstname;
         public static string lastname;
         public static string phonenumber;
@@ -47,6 +47,7 @@ namespace Reservationsystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Back button in case the user clicked Register by Mistake. This will take the user back to the login page
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
@@ -54,6 +55,7 @@ namespace Reservationsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Here all the txtboxex values are stored in the Variables mentioned in line 24
             firstname = txbxfirstname.Text;
             lastname = txbxlastname.Text;
             phonenumber = txbxphone.Text;
@@ -78,7 +80,7 @@ namespace Reservationsystem
             SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Client_tbl where ClientUsername = '" + txbxusername.Text + "' and Clientpassword='" + txbxpassword.Text + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-
+            //If statement to check if all textboxes are filled in.
             if (firstname == null || lastname == null || phonenumber == null || address == null || country == null || username == null || password == null)
             {
                 MessageBox.Show("Please fill in all the boxes.");
@@ -86,15 +88,13 @@ namespace Reservationsystem
             //If statement to prompt user if the account entered matched the details stored in the Database.
             else if (dt.Rows[0][0].ToString() == "1")
             {
-
-                MessageBox.Show("You already have an account with us.");
+                MessageBox.Show("This user is already taken.");
                 return;
             }
             else
             {
                 
-                
-                //Checks what is the next Id number.
+                //Checks what is the next Id number and automatically add the ID to the database.
                 SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl ", conn);
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
@@ -108,33 +108,37 @@ namespace Reservationsystem
                 form1.Show();
                 this.Hide();
             }
+            //Closes Database connection
             conn.Close();
         }
 
         private void txbxphone_TextChanged(object sender, EventArgs e)
         {
+            //Input control to limit the textbox to only accepts numbers
             txbxphone.Text = string.Concat(txbxphone.Text.Where(char.IsNumber));
         }
 
         private void Register_Load(object sender, EventArgs e)
         {
+            //Restrics user to manually type.
             comboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void txbxfirstname_TextChanged(object sender, EventArgs e)
         {
-            //Only accepts Letters and will clear if a number is entered.
+            //Input control to limit the textbox to only accepts Letters
             txbxfirstname.Text = string.Concat(txbxfirstname.Text.Where(char.IsLetter));
         }
 
         private void txbxlastname_TextChanged(object sender, EventArgs e)
         {
+            //Input control to limit the textbox to only accepts Letters
             txbxlastname.Text = string.Concat(txbxlastname.Text.Where(char.IsLetter));
         }
 
         private void txbxusername_TextChanged(object sender, EventArgs e)
         {
-            //removes any special characters.
+            //Input control to limit the textbox to not accept special characters
             txbxusername.Text = string.Concat(txbxusername.Text.Where(char.IsLetterOrDigit));
         }
 

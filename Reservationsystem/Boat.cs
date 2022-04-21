@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace Reservationsystem
 {
+    //Creates a base class for Boats. For this version of the program, not all attributes will be used in the main program.
+    //However they are created in case a new feature will be needed to be able to create a new Boat within the program itself. 
+    //In this version only the id,name,service,price,available and maxprice will be used. The rest are all using the default values.
     internal class Boat
     {
         private int id;
@@ -56,7 +59,6 @@ namespace Reservationsystem
             get { return available; }
             set { available = value; }
         }
-
         public string Minmumlenghtofcharter
         {
             get { return minmumlenghtofcharter;}
@@ -67,55 +69,46 @@ namespace Reservationsystem
             get { return price; }
             set { price = value; }
         }
-
         public int Maxprice
         {
             get { return maxprice; }
             set { maxprice = value; }
         }
-
         public string Port
         {
             get { return port; }
             set { port = value; }
         }
-
         public string Typeofboat
         { 
             get { return typeofboat; }
             set { typeofboat = value; }
         }
-
         public string Model
         {
             get { return model; }
             set { model = value; }
         }
-
         public string Manufacturer
         {
             get { return manufacturer; }
             set { manufacturer = value; }
         }
-
         public int Boatlenght
         {
             get { return boatlenght; }
             set { boatlenght = value; }
         }
-        
         public int Beam
         {
             get { return beam; }
             set { beam = value; }
         }
-
         public int Draft
         {
             get { return draft; }
             set { draft = value; }
         }
-
         public int Yearofconstruction
         {
             get { return yearofconstruction; }
@@ -126,19 +119,16 @@ namespace Reservationsystem
             get { return speed; }
             set { speed = value; }
         }
-
         public bool Crew
         {
             get { return crew; }
             set { crew = value; }
         }
-
         public string Enginetype
         {
             get { return enginetype; }
             set { enginetype = value; }
         }
-
         public string Engine
         {
             get { return engine; }
@@ -159,7 +149,6 @@ namespace Reservationsystem
             get { return bed; }
             set { bed = value; }
         }
-
         public int Shower
         {
             get { return shower; }
@@ -170,13 +159,11 @@ namespace Reservationsystem
             get { return watercapacity; }
             set { watercapacity = value; }
         }
-
         public int Feultankcapacity
         {
             get { return fuelTankCapacity; }
             set { fuelTankCapacity = value;}
         }
-
         public int Fuelconsumption
         {
             get { return fuelconsumption; }
@@ -239,7 +226,7 @@ namespace Reservationsystem
             fuelTankCapacity = 0;
             fuelconsumption = 0;
         }
-
+        //Method than implemts discounts.
         public virtual int Discountcal(int price)
         {
             int discount = 0;

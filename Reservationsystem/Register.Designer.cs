@@ -55,7 +55,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.chbxadmin = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
@@ -539,15 +539,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btn_Back
             // 
-            this.button3.Location = new System.Drawing.Point(14, 248);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Back.Location = new System.Drawing.Point(14, 248);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.TabIndex = 10;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.button3_Click);
             // 
             // chbxadmin
             // 
@@ -567,7 +567,7 @@
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(535, 292);
             this.Controls.Add(this.chbxadmin);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -613,7 +613,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -625,5 +624,6 @@
         private System.Windows.Forms.TextBox txbxaddress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chbxadmin;
+        private System.Windows.Forms.Button btn_Back;
     }
 }

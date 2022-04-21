@@ -196,6 +196,7 @@ namespace Reservationsystem
 
         private void Reservation_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //upon clicking on the text in the gridview the row will update all the textboxes.
             txbxReservationID.Text = Reservation_GridView.SelectedRows[0].Cells[0].Value.ToString();
             ComboClient.Text = Reservation_GridView.SelectedRows[0].Cells[1].Value.ToString();
             ComboBoat.Text = Reservation_GridView.SelectedRows[0].Cells[2].Value.ToString();
@@ -205,13 +206,11 @@ namespace Reservationsystem
             txbxPhone.Text = Reservation_GridView.SelectedRows[0].Cells[6].Value.ToString();
             txbxpricetotal.Text = Reservation_GridView.SelectedRows[0].Cells[7].Value.ToString();
             txbxprice.Text = Reservation_GridView.SelectedRows[0].Cells[8].Value.ToString();
-
-
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            //refreshes the gridview and clears the search textbox.
             //image taken from: https://www.flaticon.com/free-icons/refresh Refresh icons created by Vectors Market - Flaticon
             populate();
             txbxReservationsearch.Clear();
@@ -219,6 +218,7 @@ namespace Reservationsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Checks if the Reservation id entered in the search textbox exists.
             Con.Open();
             string mysql = "Select * from Reservation_tbl where ReservationID = '" + txbxReservationsearch.Text + "'";
             SqlDataAdapter da = new SqlDataAdapter(mysql, Con);
@@ -236,6 +236,7 @@ namespace Reservationsystem
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            //Loads admin menu
             MainBooking mainBooking = new MainBooking();
             mainBooking.Show();
             this.Hide();
@@ -243,13 +244,13 @@ namespace Reservationsystem
 
         private void ComboClient_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //combobox that checks if Admin has clicked on the users name from the drop down selection.
             if (ComboClient.Text == "")
             {
 
             }
             else
             {
-
                 SqlDataAdapter cmd = new SqlDataAdapter("Select * from Client_tbl where ClientName ='" + ComboClient.Text + "'", Con);
                 DataTable dt2 = new DataTable();
                 cmd.Fill(dt2);

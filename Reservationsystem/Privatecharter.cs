@@ -9,6 +9,7 @@ namespace Reservationsystem
 {
     internal class Privatecharter:Boat
     {
+        //child class of boat
         private string cancellationpolicy;
         private string refreshments;
 

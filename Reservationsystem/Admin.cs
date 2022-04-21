@@ -9,6 +9,10 @@ namespace Reservationsystem
 {
     internal class Admin: User
     {
+        /// <summary>
+        ///Class for Admin.
+        ///Creates a variable that stores the amount of failed login attempts, if the attemps is 3 the account will be locked.
+        /// </summary>
         private int failedlogins;
 
         public int Failedlogins
@@ -43,7 +47,7 @@ namespace Reservationsystem
             if (ret == "No")
             {
                 failedlogins++;
-
+                MessageBox.Show("The password you have entered is incorrect.");
                 if (failedlogins == 3)
                 {
                     MessageBox.Show("Your Account has been locked, please contact your line manager.");

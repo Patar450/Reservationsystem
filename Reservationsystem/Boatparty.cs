@@ -9,6 +9,7 @@ namespace Reservationsystem
 {
     internal class Boatparty:Boat
     {
+        //child class of boat
         private string refreshment;
         private bool openbar;
         private string cancellationpolicy;

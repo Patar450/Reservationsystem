@@ -33,6 +33,11 @@ namespace Reservationsystem
             comboCountry.Text = Form1.Global.country;
             txbxusername.Text = Form1.Global.username;
             txbxpassword.Text = Form1.Global.password;
+            txbxaddress.Text = Form1.Global.address;
+            txbxaddress2.Text = Form1.Global.address2;
+            txbxdob.Text = Form1.Global.dob;
+            txbxemail.Text = Form1.Global.email;
+            txbxpostcode.Text = Form1.Global.postcode;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +56,7 @@ namespace Reservationsystem
         private void btnupdate_Click(object sender, EventArgs e)
         {
             Con.Open();
-            string myquery = "UPDATE Client_tbl set ClientName = '" + txbxfirstname.Text + "', ClientSurname = '" + txbxlastname.Text + "', ClientPhone = '" + txbxphone.Text + "', ClientCountry ='" + comboCountry.Text + "', ClientUsername ='" + txbxusername.Text + "', ClientPassword ='" + txbxpassword.Text + "' where ClientId = '" + Form1.Global.counter + "';";
+            string myquery = "UPDATE Client_tbl set ClientName = '" + txbxfirstname.Text + "', ClientSurname = '" + txbxlastname.Text + "', ClientPhone = '" + txbxphone.Text + "', ClientAddress ='" + txbxaddress.Text + "', ClientAddress2 ='" + txbxaddress2.Text + "', ClientCountry ='" + comboCountry.Text + "', ClientPostcode ='" + txbxpostcode.Text + "', Clientdateofbirth ='" + txbxdob.Text + "', ClientEmail ='" + txbxemail.Text + "', ClientUsername ='" + txbxusername.Text + "', ClientPassword ='" + txbxpassword.Text + "' where ClientId = '" + Form1.Global.counter + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Client Successfully Edited");

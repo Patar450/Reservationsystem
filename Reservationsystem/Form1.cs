@@ -17,20 +17,19 @@ namespace Reservationsystem
     {
         //Creates a new instance of the object, called userAdmin & NormalUser
         List<User> account = new List<User>();
-        User user = new Admin();
+        User Adminuser = new Admin();
         User Normaluser = new NormalUser();
 
         //Method to control if the username belong to an admin or not. Creates an Object and then checks how many logins have been attempted
         private void AddtempAccount()
         {
-            
             if (admin == "Admin")
             {
-                user.Id = counter;
-                user.Username = username;
-                user.Password = password;
-                user.Locked = locked;
-                account.Add(user);
+                Adminuser.Id = counter;
+                Adminuser.Username = username;
+                Adminuser.Password = password;
+                Adminuser.Locked = locked;
+                account.Add(Adminuser);
             }
             else if(admin == "User")
             {
@@ -49,10 +48,13 @@ namespace Reservationsystem
             public static string lastname;
             public static string phone;
             public static string address;
+            public static string address2;
             public static string country;
+            public static string postcode;
+            public static string dob;
+            public static string email;
             public static string username;
             public static string password;
-            public static string admin;
             public static string locked;
         }
 
@@ -69,11 +71,23 @@ namespace Reservationsystem
 
         private void accountlocker(string password2)
         {
-            if (password2 == "Yes")
+            if (admin == "User")
             {
-                string myquery = "UPDATE Client_tbl set Locked = 'Yes' where ClientUsername = '" + txtbxusernm.Text + "';";
-                SqlCommand cmd1 = new SqlCommand(myquery, conn);
-                cmd1.ExecuteNonQuery();
+                if (password2 == "Yes")
+                {
+                    string myquery = "UPDATE Client_tbl set Locked = 'Yes' where ClientUsername = '" + txtbxusernm.Text + "';";
+                    SqlCommand cmd1 = new SqlCommand(myquery, conn);
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            else if (admin == "Admin")
+            {
+                if (password2 == "Yes")
+                {
+                    string myquery = "UPDATE Admin_tbl set Locked = 'Yes' where AdminUsername = '" + txtbxusernm.Text + "';";
+                    SqlCommand cmd1 = new SqlCommand(myquery, conn);
+                    cmd1.ExecuteNonQuery();
+                }
             }
         }
         public Form1()
@@ -95,36 +109,36 @@ namespace Reservationsystem
             //Open connection to the Database
             conn.Open();
             //Database query to check if the username entered is in the system without checking if the password entered was correct.
-            SqlDataAdapter sda7 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Admin='Admin'", conn);
+            SqlDataAdapter sda7 = new SqlDataAdapter("select COUNT(*) from Admin_tbl where AdminUsername = '" + txtbxusernm.Text + "'", conn);
             DataTable dt7 = new DataTable();
             sda7.Fill(dt7);
             //if the result of above query came up with 1, the following if statement gets executed.
             if (dt7.Rows[0][0].ToString() == "1")
             {
                 //Another query to now check if the password entered exists.
-                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' and Clientpassword='" + txbxpasswrd.Text + "' and Admin='Admin'", conn);
+                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Admin_tbl where AdminUsername = '" + txtbxusernm.Text + "' and AdminPassword='" + txbxpasswrd.Text + "'", conn);
                 DataTable dt1 = new DataTable();
                 sda1.Fill(dt1);
                 //If the result is 0. That means that the username and password for the admin was incorrect
                 if (dt1.Rows[0][0].ToString() == "0")
                 {
                     //Since the login process was wrong. An object is created and gives the user 2 more tries before the account is locked.
-                    SqlDataAdapter sda11 = new SqlDataAdapter("select * from Client_tbl where Clientusername = '" + txtbxusernm.Text + "' ", conn);
+                    SqlDataAdapter sda11 = new SqlDataAdapter("select * from Admin_tbl where AdminUsername = '" + txtbxusernm.Text + "' ", conn);
                     DataTable dt11 = new DataTable();
                     sda11.Fill(dt11);
                     counter = dt11.Rows[0][0].ToString();
-                    username = dt11.Rows[0][6].ToString();
-                    password = dt11.Rows[0][7].ToString();
-                    admin = dt11.Rows[0][8].ToString();
-                    locked = dt11.Rows[0][9].ToString();
+                    username = dt11.Rows[0][10].ToString();
+                    password = dt11.Rows[0][11].ToString();
+                    admin = "Admin";
+                    locked = dt11.Rows[0][12].ToString();
 
                     //Method to create an object. See line: 24
                     AddtempAccount();
 
                     //Method that is stored in a Child Class Admin.cs.
-                    string password2 = user.loginattempts(account.ElementAt(0).Password);
+                    string password2 = Adminuser.loginattempts(account.ElementAt(0).Password);
 
-                    //If the result of Method in line 122 is 'Yes' the databse will update itself and lock the account using the below method. Full code on line: 70
+                    //If the result of Method in line 122 is 'Yes' the database will update itself and lock the account using the below method. Full code on line: 70
                     accountlocker(password2);
                 }
                 //if however both username and password was correct and Admin is true. Then the Admin Form will load. 
@@ -164,10 +178,13 @@ namespace Reservationsystem
                         Global.lastname = dt2.Rows[0][2].ToString();
                         Global.phone = dt2.Rows[0][3].ToString();
                         Global.address = dt2.Rows[0][4].ToString();
-                        Global.country = dt2.Rows[0][5].ToString();
-                        Global.username = dt2.Rows[0][6].ToString();
-                        Global.password = dt2.Rows[0][7].ToString();
-                        Global.admin = dt2.Rows[0][8].ToString();
+                        Global.address2 = dt2.Rows[0][5].ToString();
+                        Global.country = dt2.Rows[0][6].ToString();
+                        Global.postcode = dt2.Rows[0][7].ToString();
+                        Global.dob = dt2.Rows[0][8].ToString();
+                        Global.email = dt2.Rows[0][9].ToString();
+                        Global.username = dt2.Rows[0][10].ToString();
+                        Global.password = dt2.Rows[0][11].ToString();
 
                         //Login box will 'hide' and load the main form.
                         ClientScreen mf = new ClientScreen();
@@ -181,10 +198,10 @@ namespace Reservationsystem
                         DataTable dt11 = new DataTable();
                         sda11.Fill(dt11);
                         counter = dt11.Rows[0][0].ToString();
-                        username = dt11.Rows[0][6].ToString();
-                        password = dt11.Rows[0][7].ToString();
-                        admin = dt11.Rows[0][8].ToString();
-                        locked = dt11.Rows[0][9].ToString();
+                        username = dt11.Rows[0][10].ToString();
+                        password = dt11.Rows[0][11].ToString();
+                        admin = "User";
+                        locked = dt11.Rows[0][12].ToString();
                         AddtempAccount();
 
                         string password2 = Normaluser.loginattempts(account.ElementAt(0).Password);

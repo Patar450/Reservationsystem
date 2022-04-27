@@ -18,6 +18,9 @@ namespace Reservationsystem
         {
             InitializeComponent();
         }
+        DateTime today;
+        private int res;
+
         //Linking SQl Database
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
 
@@ -27,11 +30,16 @@ namespace Reservationsystem
         public static string lastname;
         public static string phonenumber;
         public static string address;
+        public static string address2;
         public static string country;
+        public static string postcode;
+        public static string dob;
+        public static string email;
         public static string username;
         public static string password;
-        public static string admin;
+
         public static string locked;
+        public bool Datetrue = false;
         
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,6 +48,10 @@ namespace Reservationsystem
             txbxfirstname.Clear();
             txbxlastname.Clear();
             txbxpassword.Clear();
+            txbxaddress.Clear();
+            txbxaddress2.Clear();
+            txbxpostcode.Clear();
+            txbxemail.Clear();
             txbxphone.Clear();
             txbxusername.Clear();
             comboCountry.Text = "";
@@ -53,26 +65,28 @@ namespace Reservationsystem
             this.Hide();
         }
 
+        private bool IsValidEmail(string email)
+        {
+            bool Result = false;
+
+            try
+            {
+                var eMailValidator = new System.Net.Mail.MailAddress(txbxemail.Text);
+
+                Result = (txbxemail.Text.LastIndexOf(".") > txbxemail.Text.LastIndexOf("@"));
+            }
+            catch
+            {
+                Result = false;
+            };
+
+            return Result;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //Here all the txtboxex values are stored in the Variables mentioned in line 24
-            firstname = txbxfirstname.Text;
-            lastname = txbxlastname.Text;
-            phonenumber = txbxphone.Text;
-            address = txbxaddress.Text;
-            country = comboCountry.SelectedItem.ToString();
-            username = txbxusername.Text;
-            password = txbxpassword.Text;
-            locked = "No";
-
-            if (chbxadmin.Checked == true)
-            {
-                admin = "Admin";
-            }
-            else
-            {
-                admin = "User";
-            }
+           bool emailck = IsValidEmail(txbxemail.Text);
+            
             //Open connecttion to the Database
             conn.Open();
 
@@ -80,28 +94,63 @@ namespace Reservationsystem
             SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Client_tbl where ClientUsername = '" + txbxusername.Text + "' and Clientpassword='" + txbxpassword.Text + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
+
+            SqlDataAdapter sda9 = new SqlDataAdapter("select COUNT(*) from Admin_tbl where AdminUsername = '" + txbxusername.Text + "' and Adminpassword='" + txbxpassword.Text + "'", conn);
+            DataTable dt9 = new DataTable();
+            sda9.Fill(dt9);
             //If statement to check if all textboxes are filled in.
-            if (firstname == null || lastname == null || phonenumber == null || address == null || country == null || username == null || password == null)
+            if (txbxfirstname.Text == null || txbxlastname.Text == null || txbxphone.Text == null || txbxaddress.Text == null || txbxaddress2.Text == null ||comboCountry.Text == null || txbxusername.Text == null || txbxpassword.Text == null|| txbxpostcode.Text == null || Datetrue == false || emailck == false)
             {
-                MessageBox.Show("Please fill in all the boxes.");
+                MessageBox.Show("Please fill in all the boxes. Ensuring that e-mail is in the correct format and DOB isn't today.");
             }
             //If statement to prompt user if the account entered matched the details stored in the Database.
-            else if (dt.Rows[0][0].ToString() == "1")
+            else if (dt.Rows[0][0].ToString() == "1" || dt9.Rows[0][0].ToString() == "1")
             {
                 MessageBox.Show("This user is already taken.");
                 return;
             }
             else
             {
+                //Here all the txtboxex values are stored in the Variables mentioned in line 24
+
+                firstname = txbxfirstname.Text;
+                lastname = txbxlastname.Text;
+                phonenumber = txbxphone.Text;
+                address = txbxaddress.Text;
+                address2 = txbxaddress2.Text;
+                country = comboCountry.SelectedItem.ToString();
+                postcode = txbxpostcode.Text;
+                email = txbxemail.Text;
+                string tempdob = Datein.Text;
+                dob = tempdob.Remove(15);
+                username = txbxusername.Text;
+                password = txbxpassword.Text;
+                locked = "No";
+
+                if (chbxadmin.Checked == true)
+                {
+                    //Checks what is the next Id number and automatically add the ID to the database.
+                    SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Admin_tbl ", conn);
+                    DataTable dt1 = new DataTable();
+                    sda1.Fill(dt1);
+                    string savedata = dt1.Rows[0][0].ToString();
+                    int counter = 1 + Int32.Parse(savedata);
+                    SqlCommand cmd = new SqlCommand("insert into Admin_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" + address + "','" + address2 + "','" + country + "','" + postcode + "','" + dob + "','" + email + "','" + username + "','" + password + "','" + locked + "')", conn);
+                    cmd.ExecuteNonQuery();
+                }
+                else if(chbxadmin.Checked == false)
+                {
+                    //Checks what is the next Id number and automatically add the ID to the database.
+                    SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl ", conn);
+                    DataTable dt1 = new DataTable();
+                    sda1.Fill(dt1);
+                    string savedata = dt1.Rows[0][0].ToString();
+                    int counter = 1 + Int32.Parse(savedata);
+                    SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" + address + "','" + address2 + "','" + country + "','" + postcode + "','" + dob + "','" + email + "','" + username + "','" + password + "','" + locked + "')", conn);
+                    cmd.ExecuteNonQuery();
+                }
+
                 
-                //Checks what is the next Id number and automatically add the ID to the database.
-                SqlDataAdapter sda1 = new SqlDataAdapter("select COUNT(*) from Client_tbl ", conn);
-                DataTable dt1 = new DataTable();
-                sda1.Fill(dt1);
-                string savedata = dt1.Rows[0][0].ToString();
-                int counter = 1 + Int32.Parse(savedata);
-                SqlCommand cmd = new SqlCommand("insert into Client_tbl values('" + counter + "','" + firstname + "','" + lastname + "','" + phonenumber + "','" +address+ "','"+ country + "','" + username + "','" + password +"','"+admin+"','"+locked+ "')", conn);
-                cmd.ExecuteNonQuery();
                 MessageBox.Show("Registration complete. Returning to login form.");
                 conn.Close();
                 Form1 form1 = new Form1();
@@ -120,6 +169,8 @@ namespace Reservationsystem
 
         private void Register_Load(object sender, EventArgs e)
         {
+            // grabs the date today and stor it in today.
+            today = Datein.Value;
             //Restrics user to manually type.
             comboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -155,6 +206,34 @@ namespace Reservationsystem
         private void chbxadmin_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbxpostcode_TextChanged(object sender, EventArgs e)
+        {
+            txbxpostcode.Text = string.Concat(txbxpostcode.Text.Where(char.IsLetterOrDigit));
+        }
+
+        private void txbxemail_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Datein_ValueChanged(object sender, EventArgs e)
+        {
+            res = DateTime.Compare(Datein.Value, today);
+            if (res > 0)
+            {
+                MessageBox.Show("Can't pick a future date");
+            }
+            else
+            {
+                Datetrue = true;
+            }
         }
     }
 }

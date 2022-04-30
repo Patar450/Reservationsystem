@@ -34,6 +34,16 @@
             this.txbxpassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbxemail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txbxdob = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txbxpostcode = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txbxaddress2 = new System.Windows.Forms.TextBox();
+            this.txbxaddress = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.comboCountry = new System.Windows.Forms.ComboBox();
             this.txbxphone = new System.Windows.Forms.TextBox();
             this.txbxlastname = new System.Windows.Forms.TextBox();
@@ -47,16 +57,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txbxaddress = new System.Windows.Forms.TextBox();
-            this.txbxaddress2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txbxpostcode = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txbxdob = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txbxemail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +70,7 @@
             this.panel1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 100);
+            this.panel1.Size = new System.Drawing.Size(699, 100);
             this.panel1.TabIndex = 3;
             // 
             // lblClientInformation
@@ -82,6 +82,7 @@
             this.lblClientInformation.Size = new System.Drawing.Size(220, 42);
             this.lblClientInformation.TabIndex = 0;
             this.lblClientInformation.Text = "Hello Client";
+            this.lblClientInformation.Click += new System.EventHandler(this.lblClientInformation_Click);
             // 
             // txbxusername
             // 
@@ -138,6 +139,97 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Details";
+            // 
+            // txbxemail
+            // 
+            this.txbxemail.Location = new System.Drawing.Point(109, 182);
+            this.txbxemail.Name = "txbxemail";
+            this.txbxemail.Size = new System.Drawing.Size(252, 27);
+            this.txbxemail.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label11.Location = new System.Drawing.Point(44, 186);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 18);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "E-mail:";
+            // 
+            // txbxdob
+            // 
+            this.txbxdob.Enabled = false;
+            this.txbxdob.Location = new System.Drawing.Point(109, 139);
+            this.txbxdob.Name = "txbxdob";
+            this.txbxdob.Size = new System.Drawing.Size(139, 27);
+            this.txbxdob.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label10.Location = new System.Drawing.Point(58, 143);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 18);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "DOB:";
+            // 
+            // txbxpostcode
+            // 
+            this.txbxpostcode.Location = new System.Drawing.Point(362, 101);
+            this.txbxpostcode.Name = "txbxpostcode";
+            this.txbxpostcode.Size = new System.Drawing.Size(103, 27);
+            this.txbxpostcode.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label9.Location = new System.Drawing.Point(274, 108);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 18);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "PostCode:";
+            // 
+            // txbxaddress2
+            // 
+            this.txbxaddress2.Location = new System.Drawing.Point(362, 68);
+            this.txbxaddress2.Name = "txbxaddress2";
+            this.txbxaddress2.Size = new System.Drawing.Size(252, 27);
+            this.txbxaddress2.TabIndex = 21;
+            // 
+            // txbxaddress
+            // 
+            this.txbxaddress.Location = new System.Drawing.Point(362, 29);
+            this.txbxaddress.Name = "txbxaddress";
+            this.txbxaddress.Size = new System.Drawing.Size(252, 27);
+            this.txbxaddress.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label8.Location = new System.Drawing.Point(274, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Address 2:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label7.Location = new System.Drawing.Point(274, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 18);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Address 1:";
             // 
             // comboCountry
             // 
@@ -466,7 +558,7 @@
             this.btnupdate.FlatAppearance.BorderSize = 0;
             this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnupdate.Location = new System.Drawing.Point(596, 486);
+            this.btnupdate.Location = new System.Drawing.Point(570, 486);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(84, 38);
             this.btnupdate.TabIndex = 26;
@@ -474,102 +566,11 @@
             this.btnupdate.UseVisualStyleBackColor = true;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(274, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 18);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Address 1:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(274, 72);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 18);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Address 2:";
-            // 
-            // txbxaddress
-            // 
-            this.txbxaddress.Location = new System.Drawing.Point(362, 29);
-            this.txbxaddress.Name = "txbxaddress";
-            this.txbxaddress.Size = new System.Drawing.Size(252, 27);
-            this.txbxaddress.TabIndex = 20;
-            // 
-            // txbxaddress2
-            // 
-            this.txbxaddress2.Location = new System.Drawing.Point(362, 68);
-            this.txbxaddress2.Name = "txbxaddress2";
-            this.txbxaddress2.Size = new System.Drawing.Size(252, 27);
-            this.txbxaddress2.TabIndex = 21;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label9.Location = new System.Drawing.Point(274, 108);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 18);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "PostCode:";
-            // 
-            // txbxpostcode
-            // 
-            this.txbxpostcode.Location = new System.Drawing.Point(362, 101);
-            this.txbxpostcode.Name = "txbxpostcode";
-            this.txbxpostcode.Size = new System.Drawing.Size(103, 27);
-            this.txbxpostcode.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label10.Location = new System.Drawing.Point(58, 143);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 18);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "DOB:";
-            // 
-            // txbxdob
-            // 
-            this.txbxdob.Enabled = false;
-            this.txbxdob.Location = new System.Drawing.Point(109, 139);
-            this.txbxdob.Name = "txbxdob";
-            this.txbxdob.Size = new System.Drawing.Size(124, 27);
-            this.txbxdob.TabIndex = 25;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(44, 186);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 18);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "E-mail:";
-            // 
-            // txbxemail
-            // 
-            this.txbxemail.Location = new System.Drawing.Point(109, 182);
-            this.txbxemail.Name = "txbxemail";
-            this.txbxemail.Size = new System.Drawing.Size(252, 27);
-            this.txbxemail.TabIndex = 27;
-            // 
             // Clientdetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 549);
+            this.ClientSize = new System.Drawing.Size(699, 549);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.groupBox2);

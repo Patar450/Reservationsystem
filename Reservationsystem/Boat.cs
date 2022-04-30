@@ -27,7 +27,7 @@ namespace Reservationsystem
         private int draft;
         private int yearofconstruction;
         private int speed;
-        private bool crew;
+        private int crew;
         private string enginetype;
         private string engine;
         private int pax;
@@ -119,7 +119,7 @@ namespace Reservationsystem
             get { return speed; }
             set { speed = value; }
         }
-        public bool Crew
+        public int Crew
         {
             get { return crew; }
             set { crew = value; }
@@ -170,7 +170,7 @@ namespace Reservationsystem
             set { fuelconsumption = value; }
         }
 
-        public Boat(int idnum,string nam, string ser, bool av, string mini, int pri, int mpri, string pt, string type, string mod, string manu, int len, int be, int dra, int yearo, int sp, bool ct, string engt, string eng, int pass, int cb,int bd, int wat,int fetaca, int fc )
+        public Boat(int idnum,string nam, string ser, bool av, string mini, int pri, int mpri, string pt, string type, string mod, string manu, int len, int be, int dra, int yearo, int sp, int ct, string engt, string eng, int pass, int cb,int bd, int wat,int fetaca, int fc )
         {
             id = idnum;
             name = nam;
@@ -216,7 +216,7 @@ namespace Reservationsystem
             draft = 0;
             yearofconstruction = 0;
             speed = 0;
-            crew = false;
+            crew = 0;
             enginetype = "blank";
             engine = "blank";
             pax = 0;

@@ -105,7 +105,7 @@
             this.Reservation_GridView.AllowUserToOrderColumns = true;
             this.Reservation_GridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Reservation_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Reservation_GridView.Location = new System.Drawing.Point(577, 365);
+            this.Reservation_GridView.Location = new System.Drawing.Point(747, 365);
             this.Reservation_GridView.Name = "Reservation_GridView";
             this.Reservation_GridView.ReadOnly = true;
             this.Reservation_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -133,9 +133,9 @@
             this.gpbxReservationDetails.Controls.Add(this.label2);
             this.gpbxReservationDetails.Controls.Add(this.label3);
             this.gpbxReservationDetails.Controls.Add(this.label5);
-            this.gpbxReservationDetails.Location = new System.Drawing.Point(143, 365);
+            this.gpbxReservationDetails.Location = new System.Drawing.Point(76, 319);
             this.gpbxReservationDetails.Name = "gpbxReservationDetails";
-            this.gpbxReservationDetails.Size = new System.Drawing.Size(358, 329);
+            this.gpbxReservationDetails.Size = new System.Drawing.Size(627, 490);
             this.gpbxReservationDetails.TabIndex = 25;
             this.gpbxReservationDetails.TabStop = false;
             this.gpbxReservationDetails.Text = "Reservation Details";
@@ -143,9 +143,10 @@
             // txbxBoatname
             // 
             this.txbxBoatname.Enabled = false;
-            this.txbxBoatname.Location = new System.Drawing.Point(174, 95);
+            this.txbxBoatname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxBoatname.Location = new System.Drawing.Point(15, 154);
             this.txbxBoatname.Name = "txbxBoatname";
-            this.txbxBoatname.Size = new System.Drawing.Size(136, 20);
+            this.txbxBoatname.Size = new System.Drawing.Size(199, 35);
             this.txbxBoatname.TabIndex = 33;
             // 
             // btn_lock
@@ -153,11 +154,11 @@
             this.btn_lock.Enabled = false;
             this.btn_lock.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_lock.FlatAppearance.BorderSize = 0;
-            this.btn_lock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lock.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_lock.Location = new System.Drawing.Point(260, 237);
+            this.btn_lock.Location = new System.Drawing.Point(388, 328);
             this.btn_lock.Name = "btn_lock";
-            this.btn_lock.Size = new System.Drawing.Size(89, 52);
+            this.btn_lock.Size = new System.Drawing.Size(126, 75);
             this.btn_lock.TabIndex = 32;
             this.btn_lock.Text = "Lock Date";
             this.btn_lock.UseVisualStyleBackColor = true;
@@ -166,66 +167,70 @@
             // txbxpricetotal
             // 
             this.txbxpricetotal.Enabled = false;
-            this.txbxpricetotal.Location = new System.Drawing.Point(174, 183);
+            this.txbxpricetotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxpricetotal.Location = new System.Drawing.Point(388, 446);
             this.txbxpricetotal.Name = "txbxpricetotal";
-            this.txbxpricetotal.Size = new System.Drawing.Size(136, 20);
+            this.txbxpricetotal.Size = new System.Drawing.Size(136, 35);
             this.txbxpricetotal.TabIndex = 32;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(171, 162);
+            this.label8.Location = new System.Drawing.Point(207, 449);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 18);
+            this.label8.Size = new System.Drawing.Size(175, 29);
             this.label8.TabIndex = 30;
             this.label8.Text = "Total Price(Eu)";
             // 
             // txbxphone
             // 
             this.txbxphone.Enabled = false;
-            this.txbxphone.Location = new System.Drawing.Point(6, 183);
+            this.txbxphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxphone.Location = new System.Drawing.Point(201, 267);
             this.txbxphone.Name = "txbxphone";
-            this.txbxphone.Size = new System.Drawing.Size(129, 20);
+            this.txbxphone.Size = new System.Drawing.Size(194, 35);
             this.txbxphone.TabIndex = 29;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(8, 162);
+            this.label6.Location = new System.Drawing.Point(19, 270);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 18);
+            this.label6.Size = new System.Drawing.Size(176, 29);
             this.label6.TabIndex = 28;
             this.label6.Text = "Phone Number";
             // 
             // txbxaddress
             // 
             this.txbxaddress.Enabled = false;
-            this.txbxaddress.Location = new System.Drawing.Point(9, 139);
+            this.txbxaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxaddress.Location = new System.Drawing.Point(15, 226);
             this.txbxaddress.Name = "txbxaddress";
-            this.txbxaddress.Size = new System.Drawing.Size(301, 20);
+            this.txbxaddress.Size = new System.Drawing.Size(531, 35);
             this.txbxaddress.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(6, 118);
+            this.label4.Location = new System.Drawing.Point(10, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.Size = new System.Drawing.Size(102, 29);
             this.label4.TabIndex = 26;
             this.label4.Text = "Address";
             // 
             // txbxname
             // 
             this.txbxname.Enabled = false;
-            this.txbxname.Location = new System.Drawing.Point(6, 95);
+            this.txbxname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxname.Location = new System.Drawing.Point(15, 84);
             this.txbxname.Name = "txbxname";
-            this.txbxname.Size = new System.Drawing.Size(129, 20);
+            this.txbxname.Size = new System.Drawing.Size(199, 35);
             this.txbxname.TabIndex = 25;
             // 
             // Dateout
@@ -233,10 +238,10 @@
             this.Dateout.CalendarForeColor = System.Drawing.Color.DodgerBlue;
             this.Dateout.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
             this.Dateout.Enabled = false;
-            this.Dateout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dateout.Location = new System.Drawing.Point(76, 271);
+            this.Dateout.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dateout.Location = new System.Drawing.Point(132, 366);
             this.Dateout.Name = "Dateout";
-            this.Dateout.Size = new System.Drawing.Size(178, 27);
+            this.Dateout.Size = new System.Drawing.Size(250, 37);
             this.Dateout.TabIndex = 22;
             this.Dateout.ValueChanged += new System.EventHandler(this.Dateout_ValueChanged);
             // 
@@ -245,73 +250,74 @@
             this.Datein.CalendarForeColor = System.Drawing.Color.DodgerBlue;
             this.Datein.CalendarTitleForeColor = System.Drawing.Color.DodgerBlue;
             this.Datein.Enabled = false;
-            this.Datein.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Datein.Location = new System.Drawing.Point(76, 227);
+            this.Datein.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datein.Location = new System.Drawing.Point(132, 320);
             this.Datein.Name = "Datein";
-            this.Datein.Size = new System.Drawing.Size(178, 27);
+            this.Datein.Size = new System.Drawing.Size(250, 37);
             this.Datein.TabIndex = 21;
             this.Datein.ValueChanged += new System.EventHandler(this.Datein_ValueChanged);
             // 
             // txbxReservationID
             // 
             this.txbxReservationID.Enabled = false;
-            this.txbxReservationID.Location = new System.Drawing.Point(6, 44);
+            this.txbxReservationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxReservationID.Location = new System.Drawing.Point(299, 23);
             this.txbxReservationID.Name = "txbxReservationID";
-            this.txbxReservationID.Size = new System.Drawing.Size(304, 20);
+            this.txbxReservationID.Size = new System.Drawing.Size(87, 35);
             this.txbxReservationID.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(171, 74);
+            this.label7.Location = new System.Drawing.Point(15, 122);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 18);
+            this.label7.Size = new System.Drawing.Size(133, 29);
             this.label7.TabIndex = 20;
             this.label7.Text = "Boat Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(3, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 18);
+            this.label1.Size = new System.Drawing.Size(290, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Generated Reservation ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(3, 74);
+            this.label2.Location = new System.Drawing.Point(10, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
+            this.label2.Size = new System.Drawing.Size(146, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Client Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(16, 234);
+            this.label3.Location = new System.Drawing.Point(34, 328);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 18);
+            this.label3.Size = new System.Drawing.Size(88, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "Date In";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(3, 271);
+            this.label5.Location = new System.Drawing.Point(19, 373);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 18);
+            this.label5.Size = new System.Drawing.Size(107, 29);
             this.label5.TabIndex = 12;
             this.label5.Text = "Date Out";
             // 
@@ -319,11 +325,11 @@
             // 
             this.btn_Delete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Delete.FlatAppearance.BorderSize = 0;
-            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Delete.Location = new System.Drawing.Point(435, 742);
+            this.btn_Delete.Location = new System.Drawing.Point(633, 855);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(145, 72);
+            this.btn_Delete.Size = new System.Drawing.Size(265, 102);
             this.btn_Delete.TabIndex = 31;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -333,11 +339,11 @@
             // 
             this.btn_Edit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Edit.FlatAppearance.BorderSize = 0;
-            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Edit.Location = new System.Drawing.Point(143, 742);
+            this.btn_Edit.Location = new System.Drawing.Point(76, 855);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(142, 72);
+            this.btn_Edit.Size = new System.Drawing.Size(227, 102);
             this.btn_Edit.TabIndex = 30;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
@@ -348,11 +354,11 @@
             this.btnconfirm.Enabled = false;
             this.btnconfirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnconfirm.FlatAppearance.BorderSize = 0;
-            this.btnconfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconfirm.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnconfirm.Location = new System.Drawing.Point(291, 742);
+            this.btnconfirm.Location = new System.Drawing.Point(366, 855);
             this.btnconfirm.Name = "btnconfirm";
-            this.btnconfirm.Size = new System.Drawing.Size(138, 72);
+            this.btnconfirm.Size = new System.Drawing.Size(234, 102);
             this.btnconfirm.TabIndex = 32;
             this.btnconfirm.Text = "Confirm";
             this.btnconfirm.UseVisualStyleBackColor = true;

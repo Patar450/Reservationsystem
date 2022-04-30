@@ -15,8 +15,7 @@ namespace Reservationsystem
     {
 
         //Establishes a connection to the SQL Database.
-       SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
-
+       SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\OneDrive\Documents\School\STC School - Diploma\DDOOCP - Designing and Developing Object-Oriented Computer Programs (21 22) - FT - General\Assigment\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
         DateTime today;
         private int res;
 
@@ -82,7 +81,7 @@ namespace Reservationsystem
             Con.Open();
             string remove = "Yes";
             string BoatName = Reservation_GridView.SelectedRows[0].Cells[2].Value.ToString();
-            string myquery = "UPDATE Boat_tbl set BoatFree = '" + remove + "' where BoatName = '" + BoatName + "';";
+            string myquery = "UPDATE Boat_tbl set Availability = '" + remove + "' where BoatName = '" + BoatName + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
             Con.Close();
@@ -113,7 +112,7 @@ namespace Reservationsystem
             {
                 //Edits text from the Reservation_tbl.
                 Con.Open();
-                string myquery = "UPDATE Reservation_tbl set ClientName = '" + ComboClient.SelectedValue.ToString() + "', BoatName = '" + ComboBoat.SelectedValue.ToString() + "', DateIn = '" + Datein.Value + "', DateOut =' " + Dateout.Value + "' where ReservationId = '" + txbxReservationID.Text + "';";
+                string myquery = "UPDATE Reservation_tbl set Client = '" + ComboClient.SelectedValue.ToString() + "', BoatName = '" + ComboBoat.SelectedValue.ToString() + "', DateIn = '" + Datein.Text + "', DateOut =' " + Dateout.Text + "', Address = '"+txbxAddress.Text+"', Phone ='"+txbxPhone.Text+"', TotalPrice='"+txbxpricetotal.Text+"', OriginalPrice='"+txbxprice.Text+"' where ReservationId = '" + txbxReservationID.Text + "';";
                 SqlCommand cmd = new SqlCommand(myquery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Booking Successfully Edited");

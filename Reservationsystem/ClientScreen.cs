@@ -15,8 +15,7 @@ namespace Reservationsystem
     public partial class ClientScreen : Form
     {
         //Establishes a connection to the SQL Database.
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
-        //Date variable stored and used in the respopulate() method.
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\OneDrive\Documents\School\STC School - Diploma\DDOOCP - Designing and Developing Object-Oriented Computer Programs (21 22) - FT - General\Assigment\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");   //Date variable stored and used in the respopulate() method.
         DateTime today;
         //res variable to determin if the dateIn is a few days after today and DateOut are is a few days before today.
         private int res;
@@ -49,7 +48,7 @@ namespace Reservationsystem
             int countholder1 = Convert.ToInt32(dt9.Rows[0][0]);
             Con.Close();
 
-            //For loop to loop all the booking the user has and check if anyof them if due in a few days.
+            //For loop, to loop all the booking the user has and check if any of them is due in a few days.
             for (int i = 0; i < countholder1; i++)
             {
                
@@ -58,7 +57,7 @@ namespace Reservationsystem
                 res = DateTime.Compare(dateTime, today);
 
                 //if a date is found which is less than 0 (0 being Today and less would be yesterday onwards)
-                if (res < 0)
+                if (res > 0)
                 {
                     string dateholder1 = dateTime.ToString();
                     //Remove(10) is to remove the time that is stored in the Database DateIn. 
@@ -142,8 +141,9 @@ namespace Reservationsystem
 
         private void ClientScreen_Load(object sender, EventArgs e)
         {
-            //The form will load in Fullscreen to ensure that people will sight issue will be able to see all the features the program provides.
             
+            //The form will load in Fullscreen to ensure that people will sight issue will be able to see all the features the program provides.
+
             //Timer start ticking to sychronize a clock.
             timer1.Start();
             //A Welcome title will be visible at the top of the screen for the user.
@@ -176,7 +176,7 @@ namespace Reservationsystem
             //goes back to the loginscreen
             Form1 form1 = new Form1();
             form1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -186,11 +186,11 @@ namespace Reservationsystem
 
         private void btnback_Click(object sender, EventArgs e)
         {
+            
             //loads Client details form
             Clientdetail clientdetail = new Clientdetail();
             clientdetail.TopMost = true;
             clientdetail.Show();
-           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

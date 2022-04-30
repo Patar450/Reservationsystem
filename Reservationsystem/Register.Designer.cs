@@ -279,6 +279,7 @@
             this.txbxaddress2.Name = "txbxaddress2";
             this.txbxaddress2.Size = new System.Drawing.Size(334, 20);
             this.txbxaddress2.TabIndex = 4;
+            this.txbxaddress2.TextChanged += new System.EventHandler(this.txbxaddress2_TextChanged);
             // 
             // label9
             // 

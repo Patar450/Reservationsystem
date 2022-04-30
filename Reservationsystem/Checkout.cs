@@ -14,10 +14,10 @@ namespace Reservationsystem
     public partial class Checkout : Form
     {
         //Establishes a connection to the SQL Database.
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
-        
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\OneDrive\Documents\School\STC School - Diploma\DDOOCP - Designing and Developing Object-Oriented Computer Programs (21 22) - FT - General\Assigment\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
         DateTime today;
         private int res;
+        private int res1;
         private int totalpriceincludingdate;
 
         FishingSer fishing = new FishingSer();
@@ -49,7 +49,8 @@ namespace Reservationsystem
         {
             // grabs the date today and stor it in today.
             today = Datein.Value;
-
+            //Date lock button is diabled.
+            btn_lock.Enabled = false;
             //when form starts enable timer.
             timer1.Start();
 
@@ -162,14 +163,13 @@ namespace Reservationsystem
         {
             //res is used to check if the date enterred is before today
             res = DateTime.Compare(Datein.Value, today);
-            if (res < 0)
+            if (res > 0)
             {
-                MessageBox.Show("Please, pick a future date.");
-                btn_lock.Enabled = false;
             }
             else
             {
-                btn_lock.Enabled = true;
+                MessageBox.Show("Please, pick a future date.");
+                btn_lock.Enabled = false; 
             }
 
         }
@@ -178,14 +178,15 @@ namespace Reservationsystem
         {
             //res is used to check if the date enterred is before today
             res = DateTime.Compare(Dateout.Value, today);
-            if (res < 0)
+            res1 = DateTime.Compare(Dateout.Value, Datein.Value);
+            if (res1 > -1)
             {
-                MessageBox.Show("Please, pick a future date.");
-                btn_lock.Enabled = false;
+                btn_lock.Enabled = true;
             }
             else
             {
-                btn_lock.Enabled = true;
+                MessageBox.Show("Please, pick a future date.");
+                btn_lock.Enabled = false;
             }
         }
 

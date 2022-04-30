@@ -54,7 +54,7 @@ namespace Reservationsystem
             txbxemail.Clear();
             txbxphone.Clear();
             txbxusername.Clear();
-            comboCountry.Text = "";
+            comboCountry.SelectedIndex = -1;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -91,17 +91,25 @@ namespace Reservationsystem
             conn.Open();
 
             //Checks if the user name can be found as a staff.
-            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Client_tbl where ClientUsername = '" + txbxusername.Text + "' and Clientpassword='" + txbxpassword.Text + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Client_tbl where ClientUsername = '" + txbxusername.Text + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            SqlDataAdapter sda9 = new SqlDataAdapter("select COUNT(*) from Admin_tbl where AdminUsername = '" + txbxusername.Text + "' and Adminpassword='" + txbxpassword.Text + "'", conn);
+            SqlDataAdapter sda9 = new SqlDataAdapter("select COUNT(*) from Admin_tbl where AdminUsername = '" + txbxusername.Text + "'", conn);
             DataTable dt9 = new DataTable();
             sda9.Fill(dt9);
             //If statement to check if all textboxes are filled in.
-            if (txbxfirstname.Text == null || txbxlastname.Text == null || txbxphone.Text == null || txbxaddress.Text == null || txbxaddress2.Text == null ||comboCountry.Text == null || txbxusername.Text == null || txbxpassword.Text == null|| txbxpostcode.Text == null || Datetrue == false || emailck == false)
+            if (txbxfirstname.Text == null || txbxlastname.Text == null || txbxphone.Text == null || txbxaddress.Text == null || txbxaddress2.Text == null ||comboCountry.Text == null || txbxusername.Text == null || txbxpassword.Text == null|| txbxpostcode.Text == null)
             {
-                MessageBox.Show("Please fill in all the boxes. Ensuring that e-mail is in the correct format and DOB isn't today.");
+                MessageBox.Show("Please fill in all the boxes. DOB isn't today.");
+            }
+            else if(Datetrue == false)
+            {
+                MessageBox.Show("Please choose a Date of birth which isn't today onwards.");
+            }
+            else if(emailck == false)
+            {
+                MessageBox.Show("Ensure the e-mail is in the correct format. Ex: 123@abc.com");
             }
             //If statement to prompt user if the account entered matched the details stored in the Database.
             else if (dt.Rows[0][0].ToString() == "1" || dt9.Rows[0][0].ToString() == "1")
@@ -121,8 +129,7 @@ namespace Reservationsystem
                 country = comboCountry.SelectedItem.ToString();
                 postcode = txbxpostcode.Text;
                 email = txbxemail.Text;
-                string tempdob = Datein.Text;
-                dob = tempdob.Remove(15);
+                dob = Datein.Text;
                 username = txbxusername.Text;
                 password = txbxpassword.Text;
                 locked = "No";
@@ -234,6 +241,11 @@ namespace Reservationsystem
             {
                 Datetrue = true;
             }
+        }
+
+        private void txbxaddress2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

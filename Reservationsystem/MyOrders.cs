@@ -14,10 +14,12 @@ namespace Reservationsystem
     public partial class MyOrders : Form
     {
         //Establishes a connection to the SQL Database.
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
-
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Patar\OneDrive\Documents\School\STC School - Diploma\DDOOCP - Designing and Developing Object-Oriented Computer Programs (21 22) - FT - General\Assigment\Reservationsystem\Reservationsystem\Boat.mdf;Integrated Security=True");
+        //DateTime res and res1 are used for Dates
         DateTime today;
         private int res;
+        private int res1;
+
         private bool alert = false;
         public void populate()
         {
@@ -92,14 +94,10 @@ namespace Reservationsystem
             res = DateTime.Compare(Datein.Value, today);
             if (alert == true)
             {
-                if (res < 0)
+                if (res < 1)
                 {
                     MessageBox.Show("Please, pick a future date.");
                     btn_lock.Enabled = false;
-                }
-                else
-                {
-                    btn_lock.Enabled = true;
                 }
             }
             
@@ -111,14 +109,15 @@ namespace Reservationsystem
             if (alert == true)
             {
                 res = DateTime.Compare(Dateout.Value, today);
-                if (res < 0)
+                res1 = DateTime.Compare(Dateout.Value, Datein.Value);
+                if (res1 > -1)
                 {
-                    MessageBox.Show("Please, pick a future date.");
-                    btn_lock.Enabled = false;
+                    btn_lock.Enabled = true;
                 }
                 else
                 {
-                    btn_lock.Enabled = true;
+                    MessageBox.Show("Please, pick a future date.");
+                    btn_lock.Enabled = false;
                 }
             }
         }

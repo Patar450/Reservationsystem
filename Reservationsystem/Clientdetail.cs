@@ -27,6 +27,7 @@ namespace Reservationsystem
 
         private void Clientdetail_Load(object sender, EventArgs e)
         {
+            lblClientInformation.Text = Form1.Global.name + ", change details screen.";
             txbxfirstname.Text = Form1.Global.name;
             txbxlastname.Text = Form1.Global.lastname;
             txbxphone.Text = Form1.Global.phone;
@@ -59,19 +60,19 @@ namespace Reservationsystem
             string myquery = "UPDATE Client_tbl set ClientName = '" + txbxfirstname.Text + "', ClientSurname = '" + txbxlastname.Text + "', ClientPhone = '" + txbxphone.Text + "', ClientAddress ='" + txbxaddress.Text + "', ClientAddress2 ='" + txbxaddress2.Text + "', ClientCountry ='" + comboCountry.Text + "', ClientPostcode ='" + txbxpostcode.Text + "', Clientdateofbirth ='" + txbxdob.Text + "', ClientEmail ='" + txbxemail.Text + "', ClientUsername ='" + txbxusername.Text + "', ClientPassword ='" + txbxpassword.Text + "' where ClientId = '" + Form1.Global.counter + "';";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Client Successfully Edited");
+            MessageBox.Show("Client Successfully Edited. Please log out and log back in see the change.");
             Con.Close();
 
-            ClientScreen clientScreen = new ClientScreen();
-            clientScreen.Show();
-            this.Hide();
         }
 
         private void btnback_Click(object sender, EventArgs e)
         {
-            ClientScreen clientScreen = new ClientScreen();
-            clientScreen.Show();
             this.Hide();
+        }
+
+        private void lblClientInformation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

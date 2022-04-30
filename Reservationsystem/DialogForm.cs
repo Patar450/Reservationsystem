@@ -13,7 +13,7 @@ namespace Reservationsystem
 {
     public partial class DialogForm : Form
     {
-        SoundPlayer player = new SoundPlayer(soundLocation: @"C:\Users\Patar\source\repos\Reservationsystem\Reservationsystem\bin\Debug\Alert.wav");
+        SoundPlayer player = new SoundPlayer(soundLocation: @"C:\Users\Patar\OneDrive\Documents\School\STC School - Diploma\DDOOCP - Designing and Developing Object-Oriented Computer Programs (21 22) - FT - General\Assigment\Reservationsystem\Reservationsystem\bin\Debug\Alert.wav");
         public DialogForm(String Message)
         {
             InitializeComponent();
